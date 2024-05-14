@@ -9,7 +9,6 @@ import com.neo.common.service.SysAccountService;
 import com.neo.common.uilts.R;
 import com.neo.common.uilts.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,14 +38,11 @@ public class LoginController {
 
     @GetMapping("login")
     @GlobalInterceptor
+    //使用AOP切面+annotation实现参数校验 作用:解耦
     public R Login(HttpSession session,
-                   @VerifyParam() String phone,
+                   @VerifyParam(required = true) String phone,
                    @VerifyParam(required = true) String password,
                    @VerifyParam(required = true) String checkCode) {
-        //判断是否绕过前端传空值
-        if (!StringUtils.hasText(phone) || !StringUtils.hasText(password) || StringUtils.hasText(checkCode)) {
-            throw new EasyJobException(ResultCode.ERROR_OTHER, "非法请求");
-        }
 
         if (!session.getAttribute(Constants.CHECK_CODE_KEY).equals(checkCode)) {
             throw new EasyJobException(ResultCode.ERROR_OTHER, "验证码错误");

@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
@@ -81,25 +82,54 @@ public class OperationAspect {
             }
             //判断数据类型
             String paramTypeName = parameter.getParameterizedType().getTypeName();
-
+            // 传入的paramTypeName是 类型(BASE_TYPE_ARRAY)中 的某一个否?
             if (ArrayUtils.contains(BASE_TYPE_ARRAY, paramTypeName)) {
+                //是类型(BASE_TYPE_ARRAY)中 的某一个
                 logger.info("BastType");
                 /**
                  * 传入 判断的值 和 verifyParam注解
                  */
                 checkValue(value, verifyParam);
             } else {
+                //不在 类型(BASE_TYPE_ARRAY) 中
+                checkObjValue(parameter, value);
                 logger.info("OtherObject");
             }
         }
     }
 
-    private void checkObjValue(Parameter parameter, Object object) {
+    /**
+     * @param parameter 参数
+     * @param value     参数值
+     */
+
+    private void checkObjValue(Parameter parameter, Object value) {
         //TODO
         try {
-            System.out.println("TEST");
+            //获取参数类型
+            String typeName = parameter.getParameterizedType().getTypeName();
+            Class<?> aClass = Class.forName(typeName);
+            /**
+             * Field对象反映此 Class 对象所表示的类或接口的指定已声明字段
+             * getDeclaredFields()和getFields()的区别:
+             * getFields()获取到当前类、父类或父类接口的所有 public 修饰的字段
+             * getDeclaredFields()获取当前类的所有字段包括public、private、protected等所有，但不包括父类public修饰的字段
+             */
+
+            Field[] fields = aClass.getDeclaredFields();
+            for (Field field : fields) {
+                //是否有@VerifyParam注解
+                VerifyParam fieldVerifyParam = field.getAnnotation(VerifyParam.class);
+                if (fieldVerifyParam == null) {
+                    continue;
+                }
+                field.setAccessible(true);
+                Object resultValue = field.get(value);
+                checkValue(resultValue, fieldVerifyParam);
+            }
         } catch (Exception e) {
-            throw new EasyJobException();
+            logger.error("参数校验失败", e);
+            throw new EasyJobException(ResultCode.ERROR_600, "参数校验失败");
         }
     }
 
@@ -123,10 +153,11 @@ public class OperationAspect {
         /**
          * 校验长度
          */
-        if (!isEmpty && verifyParam.required()
+        if (!isEmpty
+                && ((verifyParam.max() != -1)
                 && verifyParam.max() < length
-                || verifyParam.min() != -1
-                && verifyParam.min() > length) {
+                || (verifyParam.min() != -1)
+                && verifyParam.min() > length)) {
             throw new EasyJobException(ResultCode.ERROR_600, "非法参数,长度错误");
         }
         /**

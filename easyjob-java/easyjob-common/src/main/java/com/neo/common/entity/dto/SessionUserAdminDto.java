@@ -1,22 +1,25 @@
 package com.neo.common.entity.dto;
 
 import com.neo.common.entity.vo.SysMenuVO;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * @Description 用户session 信息
- * @Author 程序员老罗
- * @Date 2023/9/16 18:15
+ * @Author SkadiLegs
+ * @Date 2024/5/14 21:48
  * @ClassName
  * @MethodName
  * @Params
  */
+
+@Data
 public class SessionUserAdminDto implements Serializable {
 
     private static final long serialVersionUID = 1690149993220674991L;
-    
+
     private Integer userId;
     private String userName;
     private Boolean superAdmin;
@@ -26,6 +29,7 @@ public class SessionUserAdminDto implements Serializable {
     public List<String> getPermissionCodeList() {
         return permissionCodeList;
     }
+
 
     public void setPermissionCodeList(List<String> permissionCodeList) {
         this.permissionCodeList = permissionCodeList;
