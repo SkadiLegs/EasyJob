@@ -95,7 +95,12 @@ public class OperationAspect {
     }
 
     private void checkObjValue(Parameter parameter, Object object) {
-        String typeName = parameter.getParameterizedType().getTypeName();
+        //TODO
+        try {
+            System.out.println("TEST");
+        } catch (Exception e) {
+            throw new EasyJobException();
+        }
     }
 
 
