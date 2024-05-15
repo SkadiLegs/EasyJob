@@ -17,7 +17,7 @@ public class SysAccountServiceImpl extends ServiceImpl<SysAccountMapper, SysAcco
 
 
     @Override
-    public void login(String phone, String password) {
+    public SessionUserAdminDto login(String phone, String password) {
         //判断空值和密码正确、用户是否被禁用
         try {
             SysAccount sysUser = baseMapper.selectOne(new QueryWrapper<SysAccount>().eq("phone", phone));
@@ -32,7 +32,7 @@ public class SysAccountServiceImpl extends ServiceImpl<SysAccountMapper, SysAcco
             adminDto.setUserId(sysUser.getUserId());
             adminDto.setUserName(sysUser.getUserName());
 
-
+            return adminDto;
         } catch (NullPointerException e) {
             throw new EasyJobException(ResultCode.NOT_FOUND, "用户未注册");
         } catch (Exception e) {

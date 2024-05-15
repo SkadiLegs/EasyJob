@@ -4,6 +4,7 @@ import com.neo.admin.annotation.GlobalInterceptor;
 import com.neo.common.annotation.VerifyParam;
 import com.neo.common.entity.constants.Constants;
 import com.neo.common.entity.dto.CreateImageCode;
+import com.neo.common.entity.dto.SessionUserAdminDto;
 import com.neo.common.exceptionhandler.EasyJobException;
 import com.neo.common.service.SysAccountService;
 import com.neo.common.uilts.R;
@@ -36,7 +37,7 @@ public class LoginController {
         createImageCode.write(response.getOutputStream());
     }
 
-    @GetMapping("login")
+    @GetMapping("/login")
     @GlobalInterceptor
     //使用AOP切面+annotation实现参数校验 作用:解耦
     public R Login(HttpSession session,
@@ -48,8 +49,8 @@ public class LoginController {
             throw new EasyJobException(ResultCode.ERROR_OTHER, "验证码错误");
         }
 
-        sysAccountService.login(phone, password);
-
+        SessionUserAdminDto login = sysAccountService.login(phone, password);
+        session.setAttribute(Constants.SESSION_KEY, login);
         return R.ok();
     }
 
