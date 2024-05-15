@@ -1,5 +1,7 @@
 package com.neo.common.entity.po;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.neo.common.annotation.VerifyParam;
 import lombok.Data;
 
@@ -17,6 +19,7 @@ public class SysMenu implements Serializable {
     /**
      * menu_id，自增主键
      */
+    @TableId(value = "menu_id", type = IdType.AUTO)
     private Integer menuId;
 
     /**

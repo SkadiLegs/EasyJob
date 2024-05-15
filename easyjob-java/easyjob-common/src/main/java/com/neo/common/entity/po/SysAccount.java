@@ -1,5 +1,7 @@
 package com.neo.common.entity.po;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.neo.common.annotation.VerifyParam;
@@ -57,12 +59,13 @@ public class SysAccount implements Serializable {
     /**
      * 用户拥有的角色多个用逗号隔开
      */
-//    @VerifyParam(required = true)
+    @VerifyParam(required = true)
     private String roles;
 
     /**
      * 创建时间
      */
+    @TableField(fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;

@@ -13,6 +13,7 @@ public class SysMenuQuery extends BaseParam {
     /**
      * menu_id，自增主键
      */
+
     private Integer menuId;
 
     /**
