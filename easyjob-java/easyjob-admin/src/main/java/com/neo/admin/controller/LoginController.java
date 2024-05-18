@@ -11,6 +11,7 @@ import com.neo.common.uilts.R;
 import com.neo.common.uilts.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @RestController
-public class LoginController {
+public class LoginController extends ABaseController {
 
     @Autowired
     SysAccountService sysAccountService;
@@ -37,7 +38,25 @@ public class LoginController {
         createImageCode.write(response.getOutputStream());
     }
 
-    @GetMapping("/login")
+//    @PostMapping("/login")
+//    @GlobalInterceptor
+//    //使用AOP切面+annotation实现参数校验 作用:解耦
+//    public ResponseVO Login(HttpSession session,
+//                            @VerifyParam(required = true) String phone,
+//                            @VerifyParam(required = true) String password,
+//                            @VerifyParam(required = true) String checkCode) {
+//
+//        if (!session.getAttribute(Constants.CHECK_CODE_KEY).equals(checkCode)) {
+//            throw new EasyJobException(ResultCode.ERROR_OTHER, "验证码错误");
+//        }
+//
+//        SessionUserAdminDto login = sysAccountService.login(phone, password);
+//
+//        session.setAttribute(Constants.SESSION_KEY, login);
+//        return getSuccessResponseVO(login);
+//    }
+
+    @PostMapping("/login")
     @GlobalInterceptor
     //使用AOP切面+annotation实现参数校验 作用:解耦
     public R Login(HttpSession session,
@@ -50,8 +69,10 @@ public class LoginController {
         }
 
         SessionUserAdminDto login = sysAccountService.login(phone, password);
+
         session.setAttribute(Constants.SESSION_KEY, login);
-        return R.ok();
+        System.out.println("success");
+        return R.ok().data("login", login);
     }
 
 }

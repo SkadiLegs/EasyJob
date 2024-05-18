@@ -1,8 +1,11 @@
 package com.neo.common.entity.vo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 
+@Data
 public class SysMenuVO implements Serializable {
 
 
@@ -23,35 +26,5 @@ public class SysMenuVO implements Serializable {
 
     private List<SysMenuVO> children;
 
-    public String getMenuName() {
-        return menuName;
-    }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
-    }
-
-    public String getMenuUrl() {
-        return menuUrl;
-    }
-
-    public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public List<SysMenuVO> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<SysMenuVO> children) {
-        this.children = children;
-    }
 }

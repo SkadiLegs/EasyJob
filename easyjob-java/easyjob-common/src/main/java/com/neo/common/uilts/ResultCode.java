@@ -5,7 +5,8 @@ public interface ResultCode {
     public static Integer ERROR_OTHER = 20001;//失败
     public static Integer NOT_FOUND = 20002;//失败
     public static Integer ERROR_600 = 20003;//失败
-
+    public static Integer ERROR_NAN = 20004;//失败
+    public static Integer ERROR_OUTTIME = 20005;//失败
 
 
 }

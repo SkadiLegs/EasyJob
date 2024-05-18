@@ -1,6 +1,7 @@
 package com.neo.common.entity.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.neo.common.annotation.VerifyParam;
 import lombok.Data;
@@ -62,7 +63,10 @@ public class SysMenu implements Serializable {
      */
     @VerifyParam(max = 50)
     private String icon;
-
+    /**
+     * 该字段不映射数据库
+     */
+    @TableField(exist = false)
     private List<SysMenu> children;
 
 
