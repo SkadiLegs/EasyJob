@@ -7,10 +7,7 @@ import com.neo.common.entity.query.SysMenuQuery;
 import com.neo.common.service.SysMenuService;
 import com.neo.common.uilts.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,7 +20,8 @@ import java.util.List;
  * @Params
  */
 @RestController
-public class SysMenuController {
+@RequestMapping("/settings")
+public class SysMenuController extends ABaseController {
 
     @Autowired
     SysMenuService sysMenuService;
@@ -37,20 +35,23 @@ public class SysMenuController {
      * @Param null
      * @Return: null
      */
-    @GetMapping("/settings")
+    @PostMapping("/menuList")
     public R loadDataList() {
         SysMenuQuery query = new SysMenuQuery();
         query.setFormate2Tree(true);
         query.setOrderBy("sort");
         List<SysMenu> menuList = sysMenuService.findLisByParam(query);
-        return R.ok().data("menuList", menuList);
+        System.out.println("+++++++++++++++++++++++++menuList+++++++++++++++++++");
+//        return R.ok().data(menuList);
+        return R.ok().data(menuList);
     }
 
-    @GetMapping("/saveMenu")
+    @PostMapping("/saveMenu")
     @GlobalInterceptor
     public R saveMenu(@VerifyParam SysMenu sysMenu) {
         sysMenuService.saveMenu(sysMenu);
-        return R.ok();
+        System.out.println("+++++++++++++++++++++++++saveMenu+++++++++++++++++++");
+        return R.ok().data(null);
     }
 
     @DeleteMapping("/deleteMenu")

@@ -2,6 +2,10 @@ package com.neo.common.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.neo.common.entity.po.SysMenu;
+import com.neo.common.entity.query.SysMenuQuery;
+import io.lettuce.core.dynamic.annotation.Param;
+
+import java.util.List;
 
 /**
  * @Description TODO
@@ -12,4 +16,9 @@ import com.neo.common.entity.po.SysMenu;
  * @Params
  */
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
+
+    public List<SysMenu> selectList1(SysMenuQuery sysMenuQuery);
+
+    public List<SysMenu> selectAllMenuByRoleIds(@Param("roleIds") int[] roleIds);
+
 }

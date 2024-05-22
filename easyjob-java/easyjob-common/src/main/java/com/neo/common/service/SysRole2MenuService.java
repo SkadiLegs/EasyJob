@@ -1,5 +1,7 @@
 package com.neo.common.service;
 
+import java.util.List;
+
 /**
  * @Description TODO
  * @Author Lenove
@@ -9,4 +11,5 @@ package com.neo.common.service;
  * @Params
  */
 public interface SysRole2MenuService {
+    List<Integer> selectMenuIdsByRoleIds(Integer roleId);
 }

@@ -8,9 +8,12 @@ import com.neo.common.exceptionhandler.EasyJobException;
 import com.neo.common.mapper.SysMenuMapper;
 import com.neo.common.service.SysMenuService;
 import com.neo.common.uilts.ResultCode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -26,6 +29,9 @@ import java.util.List;
 public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> implements SysMenuService {
     public static final Integer DEFAULT_ROOT_MENU_ID = 0;
     private static final String ROOT_MENU_NAME = "所有菜单";
+
+    @Autowired
+    private SysMenuMapper sysMenuMapper;
 
     @Override
     public List<SysMenu> findLisByParam(SysMenuQuery query) {
@@ -82,5 +88,14 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         } else {
             throw new EasyJobException(ResultCode.ERROR_NAN, "删除参数异常");
         }
+    }
+
+    @Override
+    public List<SysMenu> getAllMenuByRoleIds(String roleIds) {
+        if (!StringUtils.hasText(roleIds)) {
+            return new ArrayList<>();
+        }
+        int[] roleIdArray = Arrays.stream(roleIds.split(",")).mapToInt(Integer::valueOf).toArray();
+        return sysMenuMapper.selectAllMenuByRoleIds(roleIdArray);
     }
 }

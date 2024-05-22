@@ -2,4 +2,74 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neo.common.mapper.SysMenuMapper">
 
+    <!--实体映射-->
+    <resultMap id="base_result_map" type="com.neo.common.entity.po.SysMenu">
+        <!--menu_id，自增主键-->
+        <id column="menu_id" property="menuId"/>
+        <!--菜单名-->
+        <result column="menu_name" property="menuName"/>
+        <!--菜单类型 0：菜单 1：按钮-->
+        <result column="menu_type" property="menuType"/>
+        <!--菜单跳转到的地址-->
+        <result column="menu_url" property="menuUrl"/>
+        <!--上级菜单ID-->
+        <result column="p_id" property="pId"/>
+        <!--菜单排序-->
+        <result column="sort" property="sort"/>
+        <!--权限编码-->
+        <result column="permission_code" property="permissionCode"/>
+        <!--图标-->
+        <result column="icon" property="icon"/>
+    </resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="base_column_list">
+        menu_id
+        ,menu_name,menu_type,menu_url,p_id,
+		 sort,permission_code,icon
+    </sql>
+
+    <!-- 通用查询条件列-->
+    <sql id="query_condition">
+        <where>
+            <include refid="base_condition_filed"/>
+            <if test="query.menuNameFuzzy!= null  and query.menuNameFuzzy!=''">
+                and menu_name like concat('%', #{query.menuNameFuzzy}, '%')
+            </if>
+            <if test="query.menuUrlFuzzy!= null  and query.menuUrlFuzzy!=''">
+                and menu_url like concat('%', #{query.menuUrlFuzzy}, '%')
+            </if>
+            <if test="query.permissionCodeFuzzy!= null  and query.permissionCodeFuzzy!=''">
+                and permission_code like concat('%', #{query.permissionCodeFuzzy}, '%')
+            </if>
+            <if test="query.iconFuzzy!= null  and query.iconFuzzy!=''">
+                and icon like concat('%', #{query.iconFuzzy}, '%')
+            </if>
+        </where>
+    </sql>
+
+    <!-- 查询集合-->
+    <select id="selectList1" resultMap="base_result_map">
+        SELECT
+        <include refid="base_column_list"/>
+        FROM sys_menu
+        <include refid="query_condition"/>
+        <if test="query.orderBy!=null">
+            order by ${query.orderBy}
+        </if>
+        <if test="query.simplePage!=null">
+            limit #{query.simplePage.start},#{query.simplePage.end}
+        </if>
+    </select>
+
+    <select id="selectAllMenuByRoleIds" resultMap="base_result_map">
+        select DISTINCT m.*
+        from sys_menu m
+        inner join sys_role_2_menu rm on m.menu_id = rm.menu_id
+        where rm.role_id in (
+        <foreach collection="roleIds" separator="," item="item">
+            #{item}
+        </foreach>
+        )
+    </select>
 </mapper>

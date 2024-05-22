@@ -38,24 +38,6 @@ public class LoginController extends ABaseController {
         createImageCode.write(response.getOutputStream());
     }
 
-//    @PostMapping("/login")
-//    @GlobalInterceptor
-//    //使用AOP切面+annotation实现参数校验 作用:解耦
-//    public ResponseVO Login(HttpSession session,
-//                            @VerifyParam(required = true) String phone,
-//                            @VerifyParam(required = true) String password,
-//                            @VerifyParam(required = true) String checkCode) {
-//
-//        if (!session.getAttribute(Constants.CHECK_CODE_KEY).equals(checkCode)) {
-//            throw new EasyJobException(ResultCode.ERROR_OTHER, "验证码错误");
-//        }
-//
-//        SessionUserAdminDto login = sysAccountService.login(phone, password);
-//
-//        session.setAttribute(Constants.SESSION_KEY, login);
-//        return getSuccessResponseVO(login);
-//    }
-
     @PostMapping("/login")
     @GlobalInterceptor
     //使用AOP切面+annotation实现参数校验 作用:解耦
@@ -71,8 +53,8 @@ public class LoginController extends ABaseController {
         SessionUserAdminDto login = sysAccountService.login(phone, password);
 
         session.setAttribute(Constants.SESSION_KEY, login);
-        System.out.println("success");
-        return R.ok().data("login", login);
+        return R.ok().data(login);
     }
+
 
 }

@@ -2,6 +2,7 @@ package com.neo.common.entity.po;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.neo.common.annotation.VerifyParam;
@@ -27,6 +28,7 @@ public class SysAccount implements Serializable {
     /**
      * 用户ID
      */
+    @TableId
     private Integer userId;
 
     /**

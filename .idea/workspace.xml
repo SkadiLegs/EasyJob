@@ -4,30 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl,mybatisPlus分页配置">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/5/18 21:39&#10;Login前端对接暂时完成&#10;//TODO权限认证">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/aspect/OperationAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/aspect/OperationAspect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/target/classes/com/neo/api/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/target/classes/com/neo/api/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/SysMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/SysMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/SysRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/SysRoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/vo/SysMenuVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/vo/SysMenuVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysRole2Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/SysRole2Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/SysMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/SysMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/SysRole2MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/SysRole2MenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/SysMenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/SysMenuMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/SysMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/SysMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/SysRole2MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/SysRole2MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/SysRoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysMenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/dto/SessionUserAdminDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/dto/SessionUserAdminDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/ExamQuestionItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/ExamQuestionItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysRole2MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysRole2MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/SysAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/SysAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/vo/SysMenuVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/vo/SysMenuVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysAccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysAccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/SysRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/SysRole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/SysRole2Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/entity/po/SysRole2Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/mapper/SysMenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/mapper/SysMenuMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/mapper/SysRole2MenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/mapper/SysRole2MenuMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysMenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysMenuService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysRole2MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysRole2MenuService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/SysRoleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysAccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysAccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysMenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysMenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysRole2MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysRole2MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/service/impl/SysRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/uilts/R.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/uilts/R.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/uilts/ResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/target/classes/com/neo/common/uilts/ResultCode.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,35 +114,40 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.easyjob-admin [clean].executor": "Run",
-    "Maven.easyjob-java [clean].executor": "Run",
-    "Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.EasyjobAdminApplication (1).executor": "Run",
-    "Spring Boot.EasyjobAdminApplication.executor": "Run",
-    "Spring Boot.EasyjobApiApplication.executor": "Run",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/enums",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.easyjob-admin [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-java [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EasyjobAdminApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EasyjobAdminApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EasyjobApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/enums&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -229,7 +251,10 @@
       <workItem from="1715748217484" duration="7835000" />
       <workItem from="1715828409531" duration="14837000" />
       <workItem from="1715933777367" duration="13484000" />
-      <workItem from="1716016056321" duration="10164000" />
+      <workItem from="1716016056321" duration="11097000" />
+      <workItem from="1716181922290" duration="13127000" />
+      <workItem from="1716258474788" duration="10271000" />
+      <workItem from="1716346215835" duration="4706000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -319,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715785085222</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="2024/5/18 21:39&#10;Login前端对接暂时完成&#10;//TODO权限认证">
+      <option name="closed" value="true" />
+      <created>1716040344490</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716040344490</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +404,8 @@
     <MESSAGE value="2024/5/15 12:39 映射数据库 role\role2menu\rolemenu3个表的entity和mapper和service及实现类的建立以及配置其mybatisplus" />
     <MESSAGE value="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl" />
     <MESSAGE value="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl,mybatisPlus分页配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl,mybatisPlus分页配置" />
+    <MESSAGE value="2024/5/18 21:39&#10;Login前端对接暂时完成&#10;//TODO权限认证" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/5/18 21:39&#10;Login前端对接暂时完成&#10;//TODO权限认证" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -383,8 +417,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java</url>
-          <line>32</line>
+          <line>39</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysRole2MenuServiceImpl.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

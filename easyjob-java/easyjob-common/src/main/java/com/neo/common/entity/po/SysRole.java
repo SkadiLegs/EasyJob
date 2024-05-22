@@ -1,10 +1,11 @@
 package com.neo.common.entity.po;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.neo.common.annotation.VerifyParam;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -17,14 +18,13 @@ import java.util.List;
  * 系统角色表
  */
 @Data
-@AllArgsConstructor
 public class SysRole implements Serializable {
 
 
     /**
      * 角色ID
      */
-
+    @TableId(type = IdType.AUTO)
     private Integer roleId;
 
     /**
@@ -36,6 +36,7 @@ public class SysRole implements Serializable {
     /**
      * 角色描述
      */
+    @TableField(exist = true)
     @VerifyParam(max = 300)
     private String roleDesc;
 
@@ -55,6 +56,7 @@ public class SysRole implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastUpdateTime;
 
+    @TableField(exist = false)
     private List<Integer> menuIds;
 
 

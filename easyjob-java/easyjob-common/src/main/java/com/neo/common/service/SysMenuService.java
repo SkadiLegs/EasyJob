@@ -29,4 +29,7 @@ public interface SysMenuService {
     void saveMenu(SysMenu sysMenu);
 
     void deleteMenu(SysMenu sysMenu);
+
+    public List<SysMenu> getAllMenuByRoleIds(String roleIds);
+
 }
