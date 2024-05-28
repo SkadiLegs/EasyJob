@@ -2,8 +2,7 @@ package com.neo.common.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.neo.common.entity.po.SysRole2Menu;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Description TODO
@@ -14,5 +13,5 @@ import java.util.List;
  * @Params
  */
 public interface SysRole2MenuMapper extends BaseMapper<SysRole2Menu> {
-    List<Integer> selectMenuIdsByRoleIds(Integer roleId);
+    String selectMenuIdsByRoleIds(@Param("roleIds") String[] roleIds);
 }

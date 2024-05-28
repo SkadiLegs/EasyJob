@@ -12,6 +12,7 @@ import com.neo.common.uilts.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +40,7 @@ public class LoginController extends ABaseController {
     }
 
     @PostMapping("/login")
-    @GlobalInterceptor
+    @GlobalInterceptor(checkLogin = false)
     //使用AOP切面+annotation实现参数校验 作用:解耦
     public R Login(HttpSession session,
                    @VerifyParam(required = true) String phone,
@@ -54,6 +55,13 @@ public class LoginController extends ABaseController {
 
         session.setAttribute(Constants.SESSION_KEY, login);
         return R.ok().data(login);
+    }
+
+    @RequestMapping("/logout")
+    @GlobalInterceptor(checkLogin = false)
+    public R logout(HttpSession session) {
+        session.invalidate();
+        return R.ok();
     }
 
 

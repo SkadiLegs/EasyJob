@@ -77,25 +77,33 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         if (sysMenu.getMenuId() == null) {
             baseMapper.insert(sysMenu);
         } else {
+            if (sysMenu.getPId().equals(sysMenu.getMenuId())) {
+                throw new EasyJobException(ResultCode.ERROR_OTHER, "菜单的父菜单不能为自己");
+            }
             this.baseMapper.updateById(sysMenu);
         }
     }
 
     @Override
-    public void deleteMenu(SysMenu sysMenu) {
-        if (sysMenu.getMenuId() != null) {
-            baseMapper.deleteById(sysMenu);
+    public void deleteMenu(Integer menuId) {
+        if (menuId != null) {
+            baseMapper.deleteById(menuId);
         } else {
             throw new EasyJobException(ResultCode.ERROR_NAN, "删除参数异常");
         }
     }
 
+    //此处bug
+    //Invalid bound statement (not found): com.neo.common.mapper.SysMenuMapper.selectAllMenuByRoleIds
     @Override
     public List<SysMenu> getAllMenuByRoleIds(String roleIds) {
         if (!StringUtils.hasText(roleIds)) {
             return new ArrayList<>();
         }
         int[] roleIdArray = Arrays.stream(roleIds.split(",")).mapToInt(Integer::valueOf).toArray();
+        QueryWrapper queryWrapper = new QueryWrapper();
+
+//        queryWrapper.select("DISTINCT","*").exists("inner join sys_role_2_menu rm on m.menu_id = rm.menu_id ")
         return sysMenuMapper.selectAllMenuByRoleIds(roleIdArray);
     }
 }

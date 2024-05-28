@@ -2,6 +2,9 @@ package com.neo.admin.aspect;
 
 import com.neo.admin.annotation.GlobalInterceptor;
 import com.neo.common.annotation.VerifyParam;
+import com.neo.common.entity.constants.Constants;
+import com.neo.common.entity.dto.SessionUserAdminDto;
+import com.neo.common.entity.enums.PermissionCodeEnum;
 import com.neo.common.exceptionhandler.EasyJobException;
 import com.neo.common.uilts.ResultCode;
 import com.neo.common.uilts.VerifyUtils;
@@ -15,11 +18,15 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
+import java.util.List;
 
 @Aspect
 @Component("operationAspect")
@@ -56,6 +63,18 @@ public class OperationAspect {
 
         if (globalInterceptor.checkParams()) {
             validateParams(method, arguments);
+        }
+        /**
+         * 校验登陆
+         */
+        if (globalInterceptor.checkLogin()) {
+            checkLogin();
+        }
+        /**
+         * 校验权限
+         */
+        if (globalInterceptor.permissionCode() != null && globalInterceptor.permissionCode() != PermissionCodeEnum.NO_PERMISSION) {
+            checkPermission(globalInterceptor.permissionCode());
         }
     }
 
@@ -166,6 +185,42 @@ public class OperationAspect {
         if (!isEmpty && !StringUtils.isEmpty(verifyParam.regex().getRegex())
                 && !VerifyUtils.verify(verifyParam.regex(), String.valueOf(value))) {
             throw new EasyJobException(ResultCode.ERROR_600, "非法参数");
+        }
+
+
+    }
+
+    /**
+     * @Description 登陆校验
+     * @Author Lenove
+     * @Date 2024/5/27
+     * @MethodName checkLogin
+     * @Param null
+     * @Return: null
+     */
+    void checkLogin() {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        SessionUserAdminDto sessionUserAdminDto = (SessionUserAdminDto) request.getSession().getAttribute(Constants.SESSION_KEY);
+        if (sessionUserAdminDto == null) {
+            throw new EasyJobException(ResultCode.ERROR_LOGIN_OUT_TIME, "登陆超时");
+        }
+    }
+
+    /**
+     * @throws EasyJobException 如果用户没有权限，则抛出业务异常
+     * @Description 权限参数校验
+     * @Author Lenove
+     * @Date 2024/5/27
+     * @MethodName checkPermission
+     * @Param permissionCodeEnum 权限代码枚举
+     */
+    void checkPermission(PermissionCodeEnum permissionCodeEnum) {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        SessionUserAdminDto sessionUserAdminDto = (SessionUserAdminDto) request.getSession().getAttribute(Constants.SESSION_KEY);
+        // 拿到所有权限编码
+        List<String> permissionCodeList = sessionUserAdminDto.getPermissionCodeList();
+        if (!permissionCodeList.contains(permissionCodeEnum.getCode())) {
+            throw new EasyJobException(ResultCode.ERROR_NOPERMISSION, "权限不足");
         }
     }
 }

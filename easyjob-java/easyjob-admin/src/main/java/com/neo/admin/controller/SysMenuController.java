@@ -2,12 +2,15 @@ package com.neo.admin.controller;
 
 import com.neo.admin.annotation.GlobalInterceptor;
 import com.neo.common.annotation.VerifyParam;
+import com.neo.common.entity.enums.PermissionCodeEnum;
 import com.neo.common.entity.po.SysMenu;
 import com.neo.common.entity.query.SysMenuQuery;
 import com.neo.common.service.SysMenuService;
 import com.neo.common.uilts.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -36,28 +39,26 @@ public class SysMenuController extends ABaseController {
      * @Return: null
      */
     @PostMapping("/menuList")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_MENU)
     public R loadDataList() {
         SysMenuQuery query = new SysMenuQuery();
         query.setFormate2Tree(true);
         query.setOrderBy("sort");
         List<SysMenu> menuList = sysMenuService.findLisByParam(query);
-        System.out.println("+++++++++++++++++++++++++menuList+++++++++++++++++++");
-//        return R.ok().data(menuList);
         return R.ok().data(menuList);
     }
 
     @PostMapping("/saveMenu")
-    @GlobalInterceptor
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_MENU_EDIT)
     public R saveMenu(@VerifyParam SysMenu sysMenu) {
         sysMenuService.saveMenu(sysMenu);
-        System.out.println("+++++++++++++++++++++++++saveMenu+++++++++++++++++++");
         return R.ok().data(null);
     }
 
-    @DeleteMapping("/deleteMenu")
-    @GlobalInterceptor
-    public R deleteMenu(@VerifyParam @RequestBody SysMenu sysMenu) {
-        sysMenuService.deleteMenu(sysMenu);
+    @PostMapping("/deleteMenu")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_MENU_EDIT)
+    public R deleteMenu(@VerifyParam Integer menuId) {
+        sysMenuService.deleteMenu(menuId);
         return R.ok();
     }
 }

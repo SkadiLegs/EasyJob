@@ -15,10 +15,15 @@ import java.util.List;
  * @MethodName
  * @Params
  */
+
+
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
 
     public List<SysMenu> selectList1(SysMenuQuery sysMenuQuery);
 
     public List<SysMenu> selectAllMenuByRoleIds(@Param("roleIds") int[] roleIds);
+
+    SysMenu selectTest(@Param("item") Integer item);
+
 
 }

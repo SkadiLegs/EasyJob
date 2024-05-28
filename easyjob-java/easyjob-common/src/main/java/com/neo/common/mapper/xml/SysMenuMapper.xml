@@ -48,6 +48,32 @@
         </where>
     </sql>
 
+    <sql id="base_condition_filed">
+        <if test="query.menuId != null">
+            and menu_id = #{query.menuId}
+        </if>
+        <if test="query.menuName != null and query.menuName!=''">
+            and menu_name = #{query.menuName}
+        </if>
+        <if test="query.menuType != null">
+            and menu_type = #{query.menuType}
+        </if>
+        <if test="query.menuUrl != null and query.menuUrl!=''">
+            and menu_url = #{query.menuUrl}
+        </if>
+        <if test="query.pId != null">
+            and p_id = #{query.pId}
+        </if>
+        <if test="query.sort != null">
+            and sort = #{query.sort}
+        </if>
+        <if test="query.permissionCode != null and query.permissionCode!=''">
+            and permission_code = #{query.permissionCode}
+        </if>
+        <if test="query.icon != null and query.icon!=''">
+            and icon = #{query.icon}
+        </if>
+    </sql>
     <!-- 查询集合-->
     <select id="selectList1" resultMap="base_result_map">
         SELECT
@@ -72,4 +98,15 @@
         </foreach>
         )
     </select>
+
+    <select id="selectTest" resultType="com.neo.common.entity.po.SysMenu">
+        select *
+        from sys_menu
+        where menu_id = #{item}
+    </select>
+
 </mapper>
+
+
+
+

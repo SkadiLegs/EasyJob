@@ -1,14 +1,17 @@
 package com.neo.admin.controller;
 
+import com.neo.admin.annotation.GlobalInterceptor;
 import com.neo.common.annotation.VerifyParam;
+import com.neo.common.entity.enums.PermissionCodeEnum;
 import com.neo.common.entity.po.SysRole;
 import com.neo.common.entity.query.SysRoleQuery;
+import com.neo.common.entity.vo.PaginationResultVO;
 import com.neo.common.service.SysRoleService;
 import com.neo.common.uilts.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Description TODO
@@ -28,30 +31,52 @@ public class SysRoleController extends ABaseController {
     /**
      * 根据条件分页查询
      */
+    //TODO 前端不显示数据
     @PostMapping("/loadRoles")
-//    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_LIST)
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_LIST)
     public R loadRoles(SysRoleQuery query) {
         query.setOrderBy("create_time");
-        List<SysRole> listByPage = sysRoleService.findListByPage(query);
+        PaginationResultVO<SysRole> listByPage = sysRoleService.findListByPage(query);
         return R.ok().data(listByPage);
     }
 
+    @PostMapping("/loadAllRoles")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_LIST)
+    public R loadAllRoles() {
+        SysRoleQuery query = new SysRoleQuery();
+        query.setOrderBy("create_time");
+        return R.ok().data(sysRoleService.findListByParam(query).getRecords());
+    }
+
     @PostMapping("/saveRole")
-    public R saveRole(SysRole sysRole) {
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_EDIT)
+    public R saveRole(@VerifyParam(required = true) SysRole sysRole,
+                      String menuIds,
+                      String halfMenuIds) {
 
-        sysRoleService.saveRole(sysRole);
+        sysRoleService.saveRole(sysRole, menuIds, halfMenuIds);
         return R.ok();
     }
 
-    @DeleteMapping("/deleteRole")
-    public R deleteRole(SysRole sysRole) {
+    @PostMapping("/saveRoleMenu")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_EDIT)
+    public R saveRoleMenu(@VerifyParam(required = true) Integer roleId,
+                          @VerifyParam(required = true) String menuIds,
+                          String halfMenuIds) {
 
-        sysRoleService.deleteRole(sysRole);
+        sysRoleService.saveRoleMenu(roleId, menuIds, halfMenuIds);
         return R.ok();
     }
 
-    @GetMapping("/getRoleByRoleId")
-//    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_LIST)
+    @PostMapping("/delRole")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_DEL)
+    public R deleteRole(@VerifyParam(required = true) Integer roleId) {
+        sysRoleService.deleteRole(roleId);
+        return R.ok();
+    }
+
+    @PostMapping("/getRoleByRoleId")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_LIST)
     public R getRoleByRoleId(@VerifyParam(required = true) Integer roleId) {
         SysRole sysRole = sysRoleService.getSysRoleByRoleId(roleId);
         return R.ok().data(sysRole);

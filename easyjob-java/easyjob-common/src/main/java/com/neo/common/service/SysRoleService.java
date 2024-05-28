@@ -1,9 +1,10 @@
 package com.neo.common.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.neo.common.entity.po.SysRole;
 import com.neo.common.entity.query.SysRoleQuery;
-
-import java.util.List;
+import com.neo.common.entity.vo.PaginationResultVO;
 
 /**
  * @Description TODO
@@ -13,15 +14,29 @@ import java.util.List;
  * @MethodName
  * @Params
  */
-public interface SysRoleService {
+public interface SysRoleService extends IService<SysRole> {
     // 新增和更新权限
-    void saveRole(SysRole sysRole);
+    void saveRole(SysRole sysRole, String menuId, String halfMenuIds);
 
     //删除
-    void deleteRole(SysRole sysRole);
+    Integer deleteRole(Integer RoleId);
+
+    /**
+     * 根据条件查询列表
+     */
+
+    public Integer findCountByParam(SysRoleQuery param);
+
 
     //查询根据条件分页查询
-    List<SysRole> findListByPage(SysRoleQuery query);
+    PaginationResultVO<SysRole> findListByPage(SysRoleQuery query);
 
     SysRole getSysRoleByRoleId(Integer roleId);
+
+    void saveRoleMenu(Integer RoleId, String menuId, String halfMenuIds);
+
+    /**
+     * 根据条件查询列表
+     */
+    public Page<SysRole> findListByParam(SysRoleQuery param);
 }

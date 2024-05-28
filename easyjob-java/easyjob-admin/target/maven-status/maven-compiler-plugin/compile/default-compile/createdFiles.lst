@@ -1,0 +1,10 @@
+com\neo\admin\aspect\OperationAspect.class
+com\neo\admin\controller\TestController.class
+com\neo\admin\controller\SysMenuController.class
+com\neo\admin\controller\SysAccountController.class
+com\neo\admin\annotation\GlobalInterceptor.class
+com\neo\admin\controller\ABaseController.class
+com\neo\admin\controller\LoginController.class
+com\neo\admin\controller\SysRole2MenuController.class
+com\neo\admin\EasyjobAdminApplication.class
+com\neo\admin\controller\SysRoleController.class

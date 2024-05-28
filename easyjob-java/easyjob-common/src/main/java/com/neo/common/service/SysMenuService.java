@@ -28,7 +28,7 @@ public interface SysMenuService {
 
     void saveMenu(SysMenu sysMenu);
 
-    void deleteMenu(SysMenu sysMenu);
+    void deleteMenu(Integer menuId);
 
     public List<SysMenu> getAllMenuByRoleIds(String roleIds);
 
