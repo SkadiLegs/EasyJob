@@ -1,28 +1,24 @@
-package com.neo.common.entity.po;
+package com.neo.common.entity.query;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
+import java.util.List;
 
 /**
- *
+ * 参数
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class ExamQuestionItem implements Serializable {
+@NoArgsConstructor
+public class ExamQuestionItemQuery extends BaseParam {
 
 
-    private static final long serialVersionUID = -2630327750617171871L;
     /**
      * 选项ID
      */
-    @TableId(type = IdType.AUTO)
     private Integer itemId;
 
     /**
@@ -35,9 +31,15 @@ public class ExamQuestionItem implements Serializable {
      */
     private String title;
 
+    private String titleFuzzy;
+
     /**
      * 排序
      */
     private Integer sort;
+
+
+    private List<String> questionIdList;
+
 
 }

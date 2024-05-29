@@ -5,8 +5,11 @@ import com.neo.common.annotation.VerifyParam;
 import com.neo.common.entity.constants.Constants;
 import com.neo.common.entity.dto.CreateImageCode;
 import com.neo.common.entity.dto.SessionUserAdminDto;
+import com.neo.common.entity.enums.VerifyRegexEnum;
+import com.neo.common.entity.po.SysAccount;
 import com.neo.common.exceptionhandler.EasyJobException;
 import com.neo.common.service.SysAccountService;
+import com.neo.common.uilts.MD5;
 import com.neo.common.uilts.R;
 import com.neo.common.uilts.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,5 +67,16 @@ public class LoginController extends ABaseController {
         return R.ok();
     }
 
+    @PostMapping("/updateMyPwd")
+    @GlobalInterceptor
+    public R updatePWD(HttpSession session,
+                       @VerifyParam(required = true, regex = VerifyRegexEnum.PASSWORD) String password) {
+        SessionUserAdminDto sessionUserAdminDto = (SessionUserAdminDto) session.getAttribute(Constants.SESSION_KEY);
+        SysAccount sysAccount = new SysAccount();
+        sysAccount.setPassword(MD5.encrypt(password));
+        sysAccount.setUserId(sessionUserAdminDto.getUserId());
+        sysAccountService.updateById(sysAccount);
+        return R.ok();
+    }
 
 }
