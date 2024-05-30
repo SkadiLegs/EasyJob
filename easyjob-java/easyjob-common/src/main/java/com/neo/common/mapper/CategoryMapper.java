@@ -7,4 +7,6 @@ import io.lettuce.core.dynamic.annotation.Param;
 public interface CategoryMapper extends BaseMapper<Category> {
 
     void updateCategoryName(@Param("categoryId") Integer categoryId, @Param("categoryName") String categoryName);
+
+    Integer delAboutCategoryAll(@Param("categoryId") Integer categoryId);
 }

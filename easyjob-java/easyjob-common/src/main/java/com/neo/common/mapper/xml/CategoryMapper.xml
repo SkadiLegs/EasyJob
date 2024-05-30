@@ -10,4 +10,16 @@
         set category_name = #{categoryName}
         where category_id = #{categoryId};
     </update>
+
+    <delete id="delAboutCategoryAll">
+        delete
+        from category
+        where category_id = #{categoryId};
+        delete
+        from exam_question
+        where category_id = #{categoryId};
+        delete
+        from question_info
+        where category_id = #{categoryId};
+    </delete>
 </mapper>

@@ -19,4 +19,11 @@ public interface CategoryService extends IService<Category> {
 
     void saveCategory(Category category);
 
+    void changeSortById(String categoryIds);
+
+    //删除category后还要去exam_question表和question_info表中删除相关的所有
+    Integer delAboutCategoryAll(Integer categoryId);
+
+    //
+    List<Category> categorySelectType(Integer type);
 }
