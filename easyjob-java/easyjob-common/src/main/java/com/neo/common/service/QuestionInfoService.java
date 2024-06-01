@@ -15,4 +15,13 @@ import com.neo.common.entity.query.QuestionInfoQuery;
  */
 public interface QuestionInfoService extends IService<QuestionInfo> {
     Page<QuestionInfo> selectPageQIList(QuestionInfoQuery query);
+
+    void saveOrUpdateQIF(Boolean isSuperAdmin, QuestionInfo questionInfo);
+
+    QuestionInfo showDetailNext(QuestionInfoQuery query, Integer nextType, Integer currentId, boolean b);
+
+    void updateByParam(QuestionInfo questionInfo, QuestionInfoQuery params);
+
+
+    void removeBatchQIF(String questionIds, Integer userId);
 }

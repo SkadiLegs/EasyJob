@@ -1,15 +1,12 @@
 package com.neo.common.entity.query;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * 问题参数
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class QuestionInfoQuery extends BaseParam {
 
 
@@ -98,7 +95,9 @@ public class QuestionInfoQuery extends BaseParam {
      * 0:内部 1:外部投稿
      */
     private Integer postUserType;
-
+    /**
+     * true:返回 question 和 answerAnalysis 字段 false:不返回 question 和 answerAnalysis字段
+     */
     private Boolean queryTextContent;
 
     private String[] questionIds;

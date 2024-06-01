@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.common.mapper.ACommonMapper">
+
+    <update id="updateCount">
+        UPDATE ${tableName}
+        <set>
+            <if test="readCount!= null">
+                read_count = read_count+#{readCount},
+            </if>
+            <if test="collectCount!= null">
+                collect_count = collect_count+#{collectCount},
+            </if>
+        </set>
+        <where>
+            <if test="tableName=='question_info'">
+                question_id = #{keyId}
+            </if>
+            <if test="tableName=='share_info'">
+                share_id = #{keyId}
+            </if>
+        </where>
+    </update>
+
+</mapper>

@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/5/28 17:19&#10;login Bug排查完成:&#10;Invalid bound statement (not found)出现导致无法使用自定义mapper使得非SuperAdmin无法登陆&#10;原因不明确,详情见博客">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/5/30 21:31&#10;分类完成,八股文查询完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/CategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/QuestionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/QuestionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/QuestionInfoQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/QuestionInfoQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/QuestionInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/QuestionInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +99,7 @@
     "Spring Boot.EasyjobAdminApplication.executor": "Run",
     "Spring Boot.EasyjobApiApplication.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query",
+    "last_opened_file_path": "D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -128,8 +126,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\query" />
       <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\mapper\xml" />
+      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\query" />
       <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\po" />
       <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\enums" />
       <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\vo" />
@@ -142,11 +140,11 @@
       <recent name="com.neo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.neo.common.entity.enums" />
+      <recent name="com.neo.common.mapper" />
       <recent name="com.neo.common.service.impl" />
       <recent name="com.neo.common.service" />
-      <recent name="com.neo.common.mapper" />
       <recent name="com.neo.common.uilts" />
-      <recent name="com.neo.common.entity.enums" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -241,7 +239,9 @@
       <workItem from="1716886161020" duration="8277000" />
       <workItem from="1716894464578" duration="1686000" />
       <workItem from="1716971612211" duration="14244000" />
-      <workItem from="1717074775826" duration="1261000" />
+      <workItem from="1717074775826" duration="1542000" />
+      <workItem from="1717160481556" duration="3554000" />
+      <workItem from="1717230087711" duration="12821000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -355,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716895458264</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="2024/5/30 21:31&#10;分类完成,八股文查询完成">
+      <option name="closed" value="true" />
+      <created>1717076115612</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1717076115612</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +418,8 @@
     <MESSAGE value="2024/5/18 21:39&#10;Login前端对接暂时完成&#10;//TODO权限认证" />
     <MESSAGE value="2024/5/22 16:43&#10;菜单列表\保存完成&#10;//TODO&#10;角色列表&amp;权限列表crud" />
     <MESSAGE value="2024/5/28 17:19&#10;login Bug排查完成:&#10;Invalid bound statement (not found)出现导致无法使用自定义mapper使得非SuperAdmin无法登陆&#10;原因不明确,详情见博客" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/5/28 17:19&#10;login Bug排查完成:&#10;Invalid bound statement (not found)出现导致无法使用自定义mapper使得非SuperAdmin无法登陆&#10;原因不明确,详情见博客" />
+    <MESSAGE value="2024/5/30 21:31&#10;分类完成,八股文查询完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/5/30 21:31&#10;分类完成,八股文查询完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -462,8 +471,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="27" />
+          <line>143</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.apache.ibatis.binding.BindingException" package="org.apache.ibatis.binding" />
@@ -477,6 +486,6 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/easyjob$EasyjobAdminApplication__1_.ic" NAME="EasyjobAdminApplication (1) 覆盖结果" MODIFIED="1717074232031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/easyjob$EasyjobAdminApplication__1_.ic" NAME="EasyjobAdminApplication (1) 覆盖结果" MODIFIED="1717249892999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
