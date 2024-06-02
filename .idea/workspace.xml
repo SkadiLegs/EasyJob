@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/5/30 21:31&#10;分类完成,八股文查询完成">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/1 22:09&#10;完成QuestionInfo删除和批量删除,新增问题功能&#10;TODO&#10;修改问题,更新发布状态,上传图片方法,批量发布,批量导入">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/QuestionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/QuestionInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/QuestionInfoQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/QuestionInfoQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/QuestionInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/QuestionInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/QuestionInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/QuestionInfoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/QuestionInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/QuestionInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/CommonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +91,9 @@
     "Maven.easyjob-admin [clean].executor": "Run",
     "Maven.easyjob-java [clean].executor": "Run",
     "Maven.easyjob-java [install].executor": "Run",
+    "Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor": "Run",
     "Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.easyjob-java [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -98,6 +103,7 @@
     "Spring Boot.EasyjobAdminApplication (1).executor": "Debug",
     "Spring Boot.EasyjobAdminApplication.executor": "Run",
     "Spring Boot.EasyjobApiApplication.executor": "Run",
+    "extract.method.default.visibility": "private",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml",
     "node.js.detected.package.eslint": "true",
@@ -109,7 +115,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "fileTemplates",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -241,7 +247,8 @@
       <workItem from="1716971612211" duration="14244000" />
       <workItem from="1717074775826" duration="1542000" />
       <workItem from="1717160481556" duration="3554000" />
-      <workItem from="1717230087711" duration="12821000" />
+      <workItem from="1717230087711" duration="12994000" />
+      <workItem from="1717318555875" duration="15199000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -363,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717076115612</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2024/6/1 22:09&#10;完成QuestionInfo删除和批量删除,新增问题功能&#10;TODO&#10;修改问题,更新发布状态,上传图片方法,批量发布,批量导入">
+      <option name="closed" value="true" />
+      <created>1717251158179</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1717251158179</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +434,8 @@
     <MESSAGE value="2024/5/22 16:43&#10;菜单列表\保存完成&#10;//TODO&#10;角色列表&amp;权限列表crud" />
     <MESSAGE value="2024/5/28 17:19&#10;login Bug排查完成:&#10;Invalid bound statement (not found)出现导致无法使用自定义mapper使得非SuperAdmin无法登陆&#10;原因不明确,详情见博客" />
     <MESSAGE value="2024/5/30 21:31&#10;分类完成,八股文查询完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/5/30 21:31&#10;分类完成,八股文查询完成" />
+    <MESSAGE value="2024/6/1 22:09&#10;完成QuestionInfo删除和批量删除,新增问题功能&#10;TODO&#10;修改问题,更新发布状态,上传图片方法,批量发布,批量导入" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/1 22:09&#10;完成QuestionInfo删除和批量删除,新增问题功能&#10;TODO&#10;修改问题,更新发布状态,上传图片方法,批量发布,批量导入" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -471,8 +487,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="30" />
+          <line>134</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.apache.ibatis.binding.BindingException" package="org.apache.ibatis.binding" />

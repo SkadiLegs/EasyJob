@@ -3,6 +3,7 @@ package com.neo.common.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.neo.common.entity.config.AppConfig;
 import com.neo.common.entity.constants.Constants;
 import com.neo.common.entity.enums.PageSize;
 import com.neo.common.entity.enums.PostStatusEnum;
@@ -38,6 +39,8 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
     QuestionInfoService questionInfoService;
     @Resource
     CategoryService categoryService;
+    @Resource
+    AppConfig appConfig;
 
     @Resource
     ACommonMapper aCommonMapper;
@@ -129,7 +132,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
      */
     protected QueryWrapper<QuestionInfo> judgeTextQW(QuestionInfoQuery query) {
         QueryWrapper<QuestionInfo> queryWrapper = new QueryWrapper<>();
-        if (!query.getQueryTextContent()) {
+        if (query.getQueryTextContent() != null && !query.getQueryTextContent()) {
             queryWrapper.select(QuestionInfo.class, info -> !(info.getColumn().equals("question") || info.getColumn().equals("answer_analysis")));
         }
         return queryWrapper;
@@ -142,7 +145,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
     @Override
     public void removeBatchQIF(String questionIds, Integer userId) {
         String[] questionIdsArray = questionIds.split(",");
-        if (userId != null) {
+        if (userId != null && !userId.equals(appConfig.getSuperAdminPhones())) {
             QuestionInfoQuery queryQIF = new QuestionInfoQuery();
             queryQIF.setQuestionIds(questionIdsArray);
             QueryWrapper<QuestionInfo> queryWrapper = judgeTextQW(queryQIF);
@@ -164,5 +167,12 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
         List<String> list = Arrays.asList(questionIdsArray);
         queryDel.in("question_id", list);
         questionInfoMapper.delete(queryDel);
+    }
+
+
+    @Override
+    public void updateBatchByQIFId(QuestionInfo questionInfo, QuestionInfoQuery queryParams) {
+        List<String> list = Arrays.asList(queryParams.getQuestionIds());
+        questionInfoMapper.updateBatchByQIFId(list, questionInfo);
     }
 }

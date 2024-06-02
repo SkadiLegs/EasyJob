@@ -9,4 +9,5 @@ public interface ResultCode {
     public static Integer ERROR_OUTTIME = 20005;//超时
     public static Integer ERROR_LOGIN_OUT_TIME = 901;//超时
     public static Integer ERROR_NOPERMISSION = 902;//权限不足
+    public static Integer ERROR_BAD = 20006;//创建文件失败
 }

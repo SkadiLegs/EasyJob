@@ -6,6 +6,7 @@ import com.neo.common.annotation.VerifyParam;
 import com.neo.common.entity.constants.Constants;
 import com.neo.common.entity.dto.SessionUserAdminDto;
 import com.neo.common.entity.enums.PermissionCodeEnum;
+import com.neo.common.entity.enums.PostStatusEnum;
 import com.neo.common.entity.po.QuestionInfo;
 import com.neo.common.entity.query.QuestionInfoQuery;
 import com.neo.common.entity.vo.PaginationResultVO;
@@ -68,21 +69,20 @@ public class QuestionInfoController {
     }
 
     //TODO 更新发布状态和修改问题内容
-    @RequestMapping("/cancelPostQuestion")
+    @PostMapping("/cancelPostQuestion")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_POST)
     public R cancelPostQuestion(@VerifyParam(required = true) String questionIds) {
-//        updateStatus(questionIds, PostStatusEnum.NO_POST.getStatus());
+        updateStatus(questionIds, PostStatusEnum.NO_POST.getStatus());
         return R.ok();
     }
 
     private void updateStatus(String questionIds, Integer status) {
-        QuestionInfoQuery params = new QuestionInfoQuery();
-        params.setQuestionIds(questionIds.split(","));
+        QuestionInfoQuery queryParams = new QuestionInfoQuery();
+        queryParams.setQuestionIds(questionIds.split(","));
         QuestionInfo questionInfo = new QuestionInfo();
         questionInfo.setStatus(status);
-        CommonUtils.checkParam(params);
-//        questionInfoService.updateBatchById(questionInfo, params);
-
+        CommonUtils.checkParam(queryParams);
+        questionInfoService.updateBatchByQIFId(questionInfo, queryParams);
     }
 
     @RequestMapping("/delQuestion")

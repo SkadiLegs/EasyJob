@@ -24,4 +24,6 @@ public interface QuestionInfoService extends IService<QuestionInfo> {
 
 
     void removeBatchQIF(String questionIds, Integer userId);
+
+    void updateBatchByQIFId(QuestionInfo questionInfo, QuestionInfoQuery queryParams);
 }

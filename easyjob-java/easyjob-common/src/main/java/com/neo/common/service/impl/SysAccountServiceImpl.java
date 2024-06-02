@@ -53,6 +53,8 @@ public class SysAccountServiceImpl extends ServiceImpl<SysAccountMapper, SysAcco
             adminDto.setUserName(sysUser.getUserName());
 
             List<SysMenu> sysMenuList;
+            String[] split = appConfig.getSuperAdminPhones().split(",");
+            boolean contains = ArrayUtils.contains(appConfig.getSuperAdminPhones().split(","), phone);
             // 如果是超级管理员则获取所有信息
             if (StringUtils.hasText(appConfig.getSuperAdminPhones())
                     && ArrayUtils.contains(appConfig.getSuperAdminPhones().split(","), phone)) {
