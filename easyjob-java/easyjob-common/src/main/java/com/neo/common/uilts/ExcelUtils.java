@@ -1,9 +1,11 @@
 package com.neo.common.uilts;
 
-import com.easyjob.exception.BusinessException;
+
+import com.neo.common.exceptionhandler.EasyJobException;
 import org.apache.poi.ss.usermodel.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -34,7 +36,7 @@ public class ExcelUtils {
             List<List<String>> listData = new ArrayList<>();
             Sheet sheet = workbook.getSheetAt(0);
             if (sheet == null) {
-                throw new BusinessException("excel文件解析失败");
+                throw new EasyJobException(ResultCode.ERROR_OTHER, "excel文件解析失败");
             }
             for (int rowNumIndex = 0; rowNumIndex <= sheet.getLastRowNum(); rowNumIndex++) {
                 rowIndex = rowNumIndex;
@@ -49,13 +51,13 @@ public class ExcelUtils {
                 int maxColCount = title.length;
                 Boolean allEmpty = true;
                 if (row.getLastCellNum() < maxColCount) {
-                    throw new BusinessException("请按照模板文件上传数据");
+                    throw new EasyJobException(ResultCode.ERROR_OTHER, "请按照模板文件上传数据");
                 }
                 for (int colIndex = 0; colIndex < maxColCount; colIndex++) {
                     Cell cell = row.getCell(colIndex);
                     String cellValue = getCellValue(cell);
                     rowData.add(cellValue);
-                    if (!StringTools.isEmpty(cellValue)) {
+                    if (!StringUtils.isEmpty(cellValue)) {
                         allEmpty = false;
                     }
                 }
@@ -63,7 +65,7 @@ public class ExcelUtils {
                     String dataTitle = rowData.stream().collect(Collectors.joining("_"));
                     String titleStr = Arrays.asList(title).stream().collect(Collectors.joining("_"));
                     if (!dataTitle.equalsIgnoreCase(titleStr)) {
-                        throw new BusinessException("请按照模板文件上传数据");
+                        throw new EasyJobException(ResultCode.ERROR_OTHER, "请按照模板文件上传数据");
                     }
                 }
                 if (allEmpty) {
@@ -74,12 +76,12 @@ public class ExcelUtils {
                 }
             }
             return listData;
-        } catch (BusinessException e) {
+        } catch (EasyJobException e) {
             logger.error("文件解析错误,第：{}行", rowIndex + 1, e);
             throw e;
         } catch (Exception e) {
             logger.error("文件解析错误,第：{}行", rowIndex + 1, e);
-            throw new BusinessException("文件第" + (rowIndex + 1) + "行解析错误");
+            throw new EasyJobException(ResultCode.ERROR_OTHER, "文件第" + (rowIndex + 1) + "行解析错误");
         } finally {
             if (is != null) {
                 try {
@@ -100,7 +102,7 @@ public class ExcelUtils {
             return df.format(cell.getNumericCellValue());
         } else {
             String value = cell.getStringCellValue();
-            return StringTools.isEmpty(value) ? "" : value.trim();
+            return StringUtils.isEmpty(value) ? "" : value.trim();
         }
     }
 }

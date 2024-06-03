@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/2 22:40&#10;完成了fileController(上传下载读取组件)的代码&#10;修复了login模块中对于超级管理员的认证&#10;TODO&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,批量导入">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/3 22:30&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,完成了redis储存session的登陆优化&#10;TODO&#10;question模块的批量导入">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/EasyjobAdminApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/EasyjobAdminApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/EasyjobApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/EasyjobApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/QuestionInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/QuestionInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/QuestionInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/QuestionInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/QuestionInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/QuestionInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +252,7 @@
       <workItem from="1717318555875" duration="15786000" />
       <workItem from="1717402517510" duration="630000" />
       <workItem from="1717403238550" duration="542000" />
-      <workItem from="1717406802053" duration="11114000" />
+      <workItem from="1717406802053" duration="11572000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -407,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717339400236</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="2024/6/3 22:30&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,完成了redis储存session的登陆优化&#10;TODO&#10;question模块的批量导入">
+      <option name="closed" value="true" />
+      <created>1717425172553</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717425172553</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +456,8 @@
     <MESSAGE value="2024/5/30 21:31&#10;分类完成,八股文查询完成" />
     <MESSAGE value="2024/6/1 22:09&#10;完成QuestionInfo删除和批量删除,新增问题功能&#10;TODO&#10;修改问题,更新发布状态,上传图片方法,批量发布,批量导入" />
     <MESSAGE value="2024/6/2 22:40&#10;完成了fileController(上传下载读取组件)的代码&#10;修复了login模块中对于超级管理员的认证&#10;TODO&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,批量导入" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/2 22:40&#10;完成了fileController(上传下载读取组件)的代码&#10;修复了login模块中对于超级管理员的认证&#10;TODO&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,批量导入" />
+    <MESSAGE value="2024/6/3 22:30&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,完成了redis储存session的登陆优化&#10;TODO&#10;question模块的批量导入" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/3 22:30&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,完成了redis储存session的登陆优化&#10;TODO&#10;question模块的批量导入" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
