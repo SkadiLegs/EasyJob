@@ -1,9 +1,9 @@
 package com.neo.admin.controller;
 
-import com.neo.common.entity.po.SysMenu;
 import com.neo.common.mapper.SysMenuMapper;
 import com.neo.common.service.SysMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,9 +19,12 @@ public class TestController {
     public static final Integer DEFAULT_ROOT_MENU_ID = 0;
     private static final String ROOT_MENU_NAME = "所有菜单";
 
+    @Autowired
+    RedisTemplate redisTemplate;
+
     @GetMapping("test")
-    public SysMenu TestGETContorller(Integer id) {
-        SysMenu menu = sysMenuMapper.selectTest(id);
-        return menu;
+    public void TestGETContorller(Integer id) {
+
+        redisTemplate.opsForValue().set("testEJKey", "value");
     }
 }

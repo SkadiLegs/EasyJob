@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.neo.admin.annotation.GlobalInterceptor;
 import com.neo.common.annotation.VerifyParam;
 import com.neo.common.entity.constants.Constants;
+import com.neo.common.entity.dto.ImportErrorItem;
 import com.neo.common.entity.dto.SessionUserAdminDto;
 import com.neo.common.entity.enums.PermissionCodeEnum;
 import com.neo.common.entity.enums.PostStatusEnum;
@@ -17,8 +18,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @Description TODO
@@ -68,7 +71,45 @@ public class QuestionInfoController {
         return R.ok().data(questionInfo);
     }
 
-    //TODO 更新发布状态和修改问题内容
+
+    @RequestMapping("/delQuestion")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_DEL)
+    public R delQuestion(HttpSession session, @VerifyParam(required = true) Integer questionId) {
+        SessionUserAdminDto sessionUserAdminDto = (SessionUserAdminDto) session.getAttribute(Constants.SESSION_KEY);
+        questionInfoService.removeBatchQIF(String.valueOf(questionId), sessionUserAdminDto.getSuperAdmin() ? null : sessionUserAdminDto.getUserId());
+        return R.ok();
+    }
+
+    @RequestMapping("/delQuestionBatch")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_DEL_BATCH)
+    public R delQuestionBatch(@VerifyParam(required = true) String questionIds) {
+        questionInfoService.removeBatchQIF(questionIds, null);
+        return R.ok();
+    }
+
+    /**
+     * @Description 发布问题
+     * @Author Lenove
+     * @Date 2024/6/3
+     * @MethodName cancelPostQuestion
+     * @Param questionIds:需要发布的questionId
+     * @Return: null
+     */
+    @RequestMapping("/postQuestion")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_POST)
+    public R postQuestion(@VerifyParam(required = true) String questionIds) {
+        updateStatus(questionIds, PostStatusEnum.POST.getStatus());
+        return R.ok();
+    }
+
+    /**
+     * @Description 取消发布问题
+     * @Author Lenove
+     * @Date 2024/6/3
+     * @MethodName cancelPostQuestion
+     * @Param questionIds:需要取消发布的questionId
+     * @Return: null
+     */
     @PostMapping("/cancelPostQuestion")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_POST)
     public R cancelPostQuestion(@VerifyParam(required = true) String questionIds) {
@@ -85,18 +126,11 @@ public class QuestionInfoController {
         questionInfoService.updateBatchByQIFId(questionInfo, queryParams);
     }
 
-    @RequestMapping("/delQuestion")
-    @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_DEL)
-    public R delQuestion(HttpSession session, @VerifyParam(required = true) Integer questionId) {
+    @RequestMapping("/importQuestion")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_IMPORT)
+    public R importQuestion(HttpSession session, MultipartFile file) {
         SessionUserAdminDto sessionUserAdminDto = (SessionUserAdminDto) session.getAttribute(Constants.SESSION_KEY);
-        questionInfoService.removeBatchQIF(String.valueOf(questionId), sessionUserAdminDto.getSuperAdmin() ? null : sessionUserAdminDto.getUserId());
-        return R.ok();
-    }
-
-    @RequestMapping("/delQuestionBatch")
-    @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_DEL_BATCH)
-    public R delQuestionBatch(@VerifyParam(required = true) String questionIds) {
-        questionInfoService.removeBatchQIF(questionIds, null);
+        List<ImportErrorItem> list = questionInfoService.importQuestion(file, sessionUserAdminDto);
         return R.ok();
     }
 

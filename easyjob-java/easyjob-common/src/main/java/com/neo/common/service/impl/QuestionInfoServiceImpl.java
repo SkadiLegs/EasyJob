@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.neo.common.entity.config.AppConfig;
 import com.neo.common.entity.constants.Constants;
+import com.neo.common.entity.dto.ImportErrorItem;
+import com.neo.common.entity.dto.SessionUserAdminDto;
+import com.neo.common.entity.enums.CategoryTypeEnum;
 import com.neo.common.entity.enums.PageSize;
 import com.neo.common.entity.enums.PostStatusEnum;
 import com.neo.common.entity.po.Category;
@@ -15,12 +18,16 @@ import com.neo.common.mapper.ACommonMapper;
 import com.neo.common.mapper.QuestionInfoMapper;
 import com.neo.common.service.CategoryService;
 import com.neo.common.service.QuestionInfoService;
+import com.neo.common.uilts.ExcelUtils;
 import com.neo.common.uilts.ResultCode;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -174,5 +181,17 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
     public void updateBatchByQIFId(QuestionInfo questionInfo, QuestionInfoQuery queryParams) {
         List<String> list = Arrays.asList(queryParams.getQuestionIds());
         questionInfoMapper.updateBatchByQIFId(list, questionInfo);
+    }
+
+    @Override
+    public List<ImportErrorItem> importQuestion(MultipartFile file, SessionUserAdminDto sessionUserAdminDto) {
+        List<Category> categories = categoryService.loadAllCategpryByType(CategoryTypeEnum.QUESTION.getType());
+        // 将分类列表转换为以分类名为键，分类对象为值的 Map
+        Map<String, Category> categoryMap = categories.stream().collect(Collectors.toMap(Category::getCategoryName, Function.identity(), (data1, data2) -> data2));
+        // 从 Excel 文件中读取数据，并将数据存储在一个二维列表中
+        List<List<String>> dataList = ExcelUtils.readExcel(file, Constants.EXCEL_TITLE_QUESTION, 1);
+
+
+        return null;
     }
 }

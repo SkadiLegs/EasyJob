@@ -139,46 +139,46 @@
         UPDATE question_info
         <set>
             <if test="query.title != null">
-                title = #{bean.title},
+                title = #{query.title},
             </if>
             <if test="query.categoryId != null">
-                category_id = #{bean.categoryId},
+                category_id = #{query.categoryId},
             </if>
             <if test="query.categoryName != null">
-                category_name = #{bean.categoryName},
+                category_name = #{query.categoryName},
             </if>
             <if test="query.difficultyLevel != null">
-                difficulty_level = #{bean.difficultyLevel},
+                difficulty_level = #{query.difficultyLevel},
             </if>
             <if test="query.question != null">
-                question = #{bean.question},
+                question = #{query.question},
             </if>
             <if test="query.answerAnalysis != null">
-                answer_analysis = #{bean.answerAnalysis},
+                answer_analysis = #{query.answerAnalysis},
             </if>
             <if test="query.createTime != null">
-                create_time = #{bean.createTime},
+                create_time = #{query.createTime},
             </if>
             <if test="query.status != null">
-                status = #{bean.status},
+                status = #{query.status},
             </if>
             <if test="query.createUserId != null">
-                create_user_id = #{bean.createUserId},
+                create_user_id = #{query.createUserId},
             </if>
             <if test="query.createUserName != null">
-                create_user_name = #{bean.createUserName},
+                create_user_name = #{query.createUserName},
             </if>
             <if test="query.readCount != null">
-                read_count = #{bean.readCount},
+                read_count = #{query.readCount},
             </if>
             <if test="query.collectCount != null">
-                collect_count = #{bean.collectCount},
+                collect_count = #{query.collectCount},
             </if>
             <if test="query.postUserType != null">
-                post_user_type = #{bean.postUserType},
+                post_user_type = #{query.postUserType},
             </if>
         </set>
-        where question_id in #{questionId}
+        where question_id in (<foreach item="item" collection="questionIds" separator=",">#{item}</foreach>)
     </update>
 
 </mapper>

@@ -10,5 +10,5 @@ import java.util.List;
 public interface QuestionInfoMapper extends BaseMapper<QuestionInfo> {
     Integer updateByParam(@Param("bean") QuestionInfo bean, @Param("query") QuestionInfoQuery query);
 
-    void updateBatchByQIFId(@Param("questionId") List<String> queryParams, @Param("query") QuestionInfo questionInfo);
+    void updateBatchByQIFId(@Param("questionIds") List<String> queryParams, @Param("query") QuestionInfo questionInfo);
 }

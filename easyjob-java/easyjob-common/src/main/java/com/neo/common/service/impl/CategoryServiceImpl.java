@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -126,4 +127,16 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
         return categories;
     }
 
+    @Override
+    public List<Category> loadAllCategpryByType(Integer type) {
+
+        CategoryTypeEnum typeEnum = CategoryTypeEnum.getByType(type);
+        if (typeEnum == null) {
+            throw new EasyJobException(ResultCode.ERROR_600, "请求参数错误");
+        }
+        QueryWrapper<Category> queryWrapper = new QueryWrapper();
+        queryWrapper.orderByAsc("sort").in(Arrays.toString(new Integer[]{typeEnum.getType(), CategoryTypeEnum.QUESTION_EXAM.getType()}));
+        List<Category> categories = categoryMapper.selectList(queryWrapper);
+        return categories;
+    }
 }
