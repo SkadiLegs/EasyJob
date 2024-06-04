@@ -131,7 +131,7 @@ public class QuestionInfoController {
     public R importQuestion(HttpSession session, MultipartFile file) {
         SessionUserAdminDto sessionUserAdminDto = (SessionUserAdminDto) session.getAttribute(Constants.SESSION_KEY);
         List<ImportErrorItem> list = questionInfoService.importQuestion(file, sessionUserAdminDto);
-        return R.ok();
+        return R.ok().data(list);
     }
 
 }

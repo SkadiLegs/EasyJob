@@ -10,6 +10,7 @@ import com.neo.common.entity.dto.SessionUserAdminDto;
 import com.neo.common.entity.enums.CategoryTypeEnum;
 import com.neo.common.entity.enums.PageSize;
 import com.neo.common.entity.enums.PostStatusEnum;
+import com.neo.common.entity.enums.VerifyRegexEnum;
 import com.neo.common.entity.po.Category;
 import com.neo.common.entity.po.QuestionInfo;
 import com.neo.common.entity.query.QuestionInfoQuery;
@@ -20,13 +21,13 @@ import com.neo.common.service.CategoryService;
 import com.neo.common.service.QuestionInfoService;
 import com.neo.common.uilts.ExcelUtils;
 import com.neo.common.uilts.ResultCode;
+import com.neo.common.uilts.VerifyUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -191,7 +192,71 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
         // 从 Excel 文件中读取数据，并将数据存储在一个二维列表中
         List<List<String>> dataList = ExcelUtils.readExcel(file, Constants.EXCEL_TITLE_QUESTION, 1);
 
+        ArrayList<ImportErrorItem> errorList = new ArrayList<>();
 
-        return null;
+        ArrayList<QuestionInfo> questionList = new ArrayList<>();
+
+        Integer dataRowNum = 2;
+
+        for (List<String> row : dataList) {
+            if (errorList.size() > Constants.LENGTH_50) {
+                throw new EasyJobException(ResultCode.ERROR_600, "错误数据超过" + Constants.LENGTH_50 + "行，请认真检查数据后再导入");
+            }
+            dataRowNum++;
+            List<String> errorItemList = new ArrayList<>();
+
+            Integer index = 0;
+
+            String title = row.get(index++);
+            if (!StringUtils.hasText(title) || title.length() > Constants.LENGTH_150) {
+                errorItemList.add("标题不能为空，且长度不能超过" + Constants.LENGTH_150);
+            }
+            String categoryName = row.get(index++);
+            Category category = categoryMap.get(categoryName);
+            if (category == null) {
+                errorItemList.add("分类名称不存在");
+            }
+            String difficultyLevel = row.get(index++);
+            Integer difficultyLevelInt = null;
+
+            if (VerifyUtils.verify(VerifyRegexEnum.POSITIVE_INTEGER, difficultyLevel)) {
+                difficultyLevelInt = Integer.parseInt(difficultyLevel);
+                if (difficultyLevelInt > 5) {
+                    errorItemList.add("难度只能是1到5的数字");
+                }
+            } else {
+                errorItemList.add("难度必须是正整数");
+            }
+            String question = row.get(index++);
+            String answerAnalysis = row.get(index++);
+            if (!StringUtils.hasText(answerAnalysis)) {
+                errorItemList.add("答案不能为空");
+            }
+            if (!errorItemList.isEmpty() || !errorList.isEmpty()) {
+                ImportErrorItem errorItem = new ImportErrorItem();
+                errorItem.setRowNum(dataRowNum);
+                errorItem.setErrorItemList(errorItemList);
+                errorList.add(errorItem);
+                continue;
+            }
+
+            QuestionInfo questionInfo = new QuestionInfo();
+            questionInfo.setTitle(title);
+            questionInfo.setCategoryId(category.getCategoryId());
+            questionInfo.setCategoryName(category.getCategoryName());
+            questionInfo.setDifficultyLevel(difficultyLevelInt);
+            questionInfo.setQuestion(question);
+            questionInfo.setAnswerAnalysis(answerAnalysis);
+            questionInfo.setCreateTime(new Date());
+            questionInfo.setStatus(PostStatusEnum.NO_POST.getStatus());
+            questionInfo.setCreateUserId(String.valueOf(sessionUserAdminDto.getUserId()));
+            questionInfo.setCreateUserName(sessionUserAdminDto.getUserName());
+            questionList.add(questionInfo);
+        }
+        if (questionList.isEmpty()) {
+            return errorList;
+        }
+        this.questionInfoMapper.insertBatch(questionList);
+        return errorList;
     }
 }

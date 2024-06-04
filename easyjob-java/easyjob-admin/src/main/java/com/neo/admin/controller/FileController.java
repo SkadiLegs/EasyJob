@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 /**
@@ -146,7 +147,7 @@ public class FileController {
      * @Param null
      * @Return: null
      */
-    @PostMapping("/downloadTemplate")
+    @RequestMapping("/downloadTemplate")
     public void downloadTemplate(HttpServletResponse response, HttpServletRequest request, Integer type) {
         ImportTemplateTypeEnum templateTypeEnum = ImportTemplateTypeEnum.getByType(type);
         if (templateTypeEnum == null) {
@@ -162,12 +163,13 @@ public class FileController {
             if (request.getHeader("User-Agent").toLowerCase().indexOf("msie") > 0) {//IE浏览器
                 fileName = URLEncoder.encode(fileName, "UTF-8");
             } else {
-                fileName = new String(fileName.getBytes("UTF-8"), "ISO8859-1");
+                fileName = new String(fileName.getBytes(StandardCharsets.UTF_8), "ISO8859-1");
             }
             // 设置响应的头部信息，包括文件名
             response.setHeader("Content-Disposition", "attachment;filename=\"" + fileName + "\"");
             //读取文件
             ClassPathResource resource = new ClassPathResource(templateTypeEnum.getTemplatePath());
+            //
             in = resource.getInputStream();
             byte[] byteData = new byte[1024];
             out = response.getOutputStream();
