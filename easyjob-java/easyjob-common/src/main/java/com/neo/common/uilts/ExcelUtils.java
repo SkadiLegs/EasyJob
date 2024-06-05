@@ -27,6 +27,15 @@ import java.util.stream.Collectors;
 public class ExcelUtils {
     private static final Logger logger = LoggerFactory.getLogger(ExcelUtils.class);
 
+    /**
+     * 读取 Excel 文件并返回包含数据的二维列表
+     *
+     * @param file          要读取的 Excel 文件
+     * @param title         Excel 文件的标题行
+     * @param startRowIndex 开始读取数据的行索引
+     * @return 包含数据的二维列表
+     * @throws IOException 如果读取文件时发生 I/O 错误
+     */
     public static List<List<String>> readExcel(MultipartFile file, String[] title, Integer startRowIndex) {
         InputStream is = null;
         Integer rowIndex = 0;

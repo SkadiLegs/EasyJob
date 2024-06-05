@@ -135,7 +135,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
             throw new EasyJobException(ResultCode.ERROR_600, "请求参数错误");
         }
         QueryWrapper<Category> queryWrapper = new QueryWrapper();
-        queryWrapper.orderByAsc("sort").in(Arrays.toString(new Integer[]{typeEnum.getType(), CategoryTypeEnum.QUESTION_EXAM.getType()}));
+        queryWrapper.orderByAsc("sort").in("type", Arrays.asList(typeEnum.getType(), CategoryTypeEnum.QUESTION_EXAM.getType()));
         List<Category> categories = categoryMapper.selectList(queryWrapper);
         return categories;
     }

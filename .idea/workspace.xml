@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/3 22:30&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,完成了redis储存session的登陆优化&#10;TODO&#10;question模块的批量导入">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/4 18:01&#10;修改问题,下载导入问题模版,&#10;TODO&#10;question模块的批量导入未完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/EasyjobApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/EasyjobApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/java/com/neo/api/controller/APITestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/QuestionInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/QuestionInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/QuestionInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/QuestionInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ExcelUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +260,8 @@
       <workItem from="1717402517510" duration="630000" />
       <workItem from="1717403238550" duration="542000" />
       <workItem from="1717406802053" duration="11936000" />
-      <workItem from="1717485307715" duration="11073000" />
+      <workItem from="1717485307715" duration="11325000" />
+      <workItem from="1717577598764" duration="11133000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -414,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717425479828</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="2024/6/4 18:01&#10;修改问题,下载导入问题模版,&#10;TODO&#10;question模块的批量导入未完成">
+      <option name="closed" value="true" />
+      <created>1717511144907</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717511144907</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +482,8 @@
     <MESSAGE value="2024/6/1 22:09&#10;完成QuestionInfo删除和批量删除,新增问题功能&#10;TODO&#10;修改问题,更新发布状态,上传图片方法,批量发布,批量导入" />
     <MESSAGE value="2024/6/2 22:40&#10;完成了fileController(上传下载读取组件)的代码&#10;修复了login模块中对于超级管理员的认证&#10;TODO&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,批量导入" />
     <MESSAGE value="2024/6/3 22:30&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,完成了redis储存session的登陆优化&#10;TODO&#10;question模块的批量导入" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/3 22:30&#10;修改问题TEST(未测试),更新发布状态,上传图片方法,批量发布,完成了redis储存session的登陆优化&#10;TODO&#10;question模块的批量导入" />
+    <MESSAGE value="2024/6/4 18:01&#10;修改问题,下载导入问题模版,&#10;TODO&#10;question模块的批量导入未完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/4 18:01&#10;修改问题,下载导入问题模版,&#10;TODO&#10;question模块的批量导入未完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -525,11 +535,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java</url>
           <line>155</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
@@ -548,12 +553,27 @@
           <line>151</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ExcelUtils.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.apache.ibatis.binding.BindingException" package="org.apache.ibatis.binding" />
           <option name="timeStamp" value="23" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="dataTitle" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

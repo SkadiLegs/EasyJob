@@ -3,6 +3,7 @@ package com.neo.api.controller;
 import com.neo.common.entity.constants.Constants;
 import com.neo.common.entity.dto.CreateImageCode;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
@@ -10,9 +11,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @RestController
-public class TestController {
+@RequestMapping("/test")
+public class APITestController {
 
-    @GetMapping("test")
+    @GetMapping("ApiTest")
     public String TestGETContorller() {
         return "hi TEST";
     }

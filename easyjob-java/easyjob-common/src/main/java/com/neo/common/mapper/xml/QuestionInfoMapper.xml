@@ -181,4 +181,176 @@
         where question_id in (<foreach item="item" collection="questionIds" separator=",">#{item}</foreach>)
     </update>
 
+    <insert id="insertOrUpdate" parameterType="com.neo.common.entity.po.QuestionInfo">
+        Insert into question_info
+        <trim suffix=")" prefix="(" suffixOverrides=",">
+            <if test="query.questionId!=null">
+                question_id,
+            </if>
+            <if test="query.title!=null">
+                title,
+            </if>
+            <if test="query.category_id!=null">
+                category_id,
+            </if>
+            <if test="query.category_name!=null">
+                category_name,
+            </if>
+            <if test="query.difficulty_level!=null">
+                difficulty_level,
+            </if>
+            <if test="query.question!=null">
+                question,
+            </if>
+            <if test="query.answer_analysis!=null">
+                answer_analysis,
+            </if>
+            <if test="query.create_time!=null">
+                create_time,
+            </if>
+            <if test="query.status!=null">
+                status,
+            </if>
+            <if test="query.create_user_id!=null">
+                create_user_id,
+            </if>
+            <if test="query.create_user_name!=null">
+                create_user_name,
+            </if>
+            <if test="query.read_count!=null">
+                read_count,
+            </if>
+            <if test="query.collect_count!=null">
+                collect_count,
+            </if>
+            <if test="query.post_user_type!=null">
+                post_user_type,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="query.questionId!=null">
+                #{query.questionId},
+            </if>
+            <if test="query.title!=null">
+                #{query.title},
+            </if>
+            <if test="query.categoryId!=null">
+                #{query.categoryId},
+            </if>
+            <if test="query.categoryName!=null">
+                #{query.categoryName},
+            </if>
+            <if test="query.difficultyLevel!=null">
+                #{query.difficultyLevel},
+            </if>
+            <if test="query.question!=null">
+                #{query.question},
+            </if>
+            <if test="query.answerAnalysis!=null">
+                #{query.answerAnalysis},
+            </if>
+            <if test="query.createTime!=null">
+                #{query.createTime},
+            </if>
+            <if test="query.status!=null">
+                #{query.status},
+            </if>
+            <if test="query.createUserId!=null">
+                #{query.createUserId},
+            </if>
+            <if test="query.createUserName!=null">
+                #{query.createUserName},
+            </if>
+            <if test="query.readCount!=null">
+                #{query.readCount},
+            </if>
+            <if test="query.collectCount!=null">
+                #{query.collectCount},
+            </if>
+            <if test="query.postUserType!=null">
+                #{query.postUserType},
+            </if>
+        </trim>
+        on DUPLICATE key update
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="query.title!=null">
+                title = VALUES(title),
+            </if>
+            <if test="query.categoryId!=null">
+                category_id = VALUES(category_id),
+            </if>
+            <if test="query.categoryName!=null">
+                category_name = VALUES(category_name),
+            </if>
+            <if test="query.difficultyLevel!=null">
+                difficulty_level = VALUES(difficulty_level),
+            </if>
+            <if test="query.question!=null">
+                question = VALUES(question),
+            </if>
+            <if test="query.answerAnalysis!=null">
+                answer_analysis = VALUES(answer_analysis),
+            </if>
+            <if test="query.createTime!=null">
+                create_time = VALUES(create_time),
+            </if>
+            <if test="query.status!=null">
+                status = VALUES(status),
+            </if>
+            <if test="query.createUserId!=null">
+                create_user_id = VALUES(create_user_id),
+            </if>
+            <if test="query.createUserName!=null">
+                create_user_name = VALUES(create_user_name),
+            </if>
+            <if test="query.readCount!=null">
+                read_count = VALUES(read_count),
+            </if>
+            <if test="query.collectCount!=null">
+                collect_count = VALUES(collect_count),
+            </if>
+            <if test="query.postUserType!=null">
+                post_user_type = VALUES(post_user_type),
+            </if>
+        </trim>
+    </insert>
+
+
+    <!-- 添加 （批量插入）-->
+    <insert id="insertBatch" parameterType="com.neo.common.entity.po.QuestionInfo" useGeneratedKeys="true"
+            keyProperty="questionId">
+        INSERT INTO question_info(
+        title,
+        category_id,
+        category_name,
+        difficulty_level,
+        question,
+        answer_analysis,
+        create_time,
+        status,
+        create_user_id,
+        create_user_name,
+        read_count,
+        collect_count,
+        post_user_type
+        )values
+        <foreach collection="queryList" item="item" separator=",">
+            (
+            #{item.title},
+            #{item.categoryId},
+            #{item.categoryName},
+            #{item.difficultyLevel},
+            #{item.question},
+            #{item.answerAnalysis},
+            #{item.createTime},
+            #{item.status},
+            #{item.createUserId},
+            #{item.createUserName},
+            #{item.readCount},
+            #{item.collectCount},
+            #{item.postUserType}
+            )
+        </foreach>
+    </insert>
+
 </mapper>
