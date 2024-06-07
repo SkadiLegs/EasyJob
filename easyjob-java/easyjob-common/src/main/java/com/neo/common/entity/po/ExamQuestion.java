@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.neo.common.annotation.VerifyParam;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -19,7 +19,7 @@ import java.util.List;
  * 考试题目
  */
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 public class ExamQuestion implements Serializable {
 
 

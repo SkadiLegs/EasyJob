@@ -51,11 +51,13 @@ public class QuestionInfo implements Serializable {
     /**
      * 问题描述
      */
+
     private String question;
 
     /**
      * 回答解释
      */
+
     private String answerAnalysis;
 
     /**

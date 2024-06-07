@@ -55,7 +55,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
 
     @Override
     public Page<QuestionInfo> selectPageQIList(QuestionInfoQuery query) {
-        Page<QuestionInfo> questionInfoPage = new Page<>(query.getPageNo() == null ? 1 : query.getPageNo(), query.getPageSize() == null ? PageSize.SIZE15.getSize() : query.getPageSize());
+        Page<QuestionInfo> questionInfoPage = new Page<>(query.getPageNo() == null ? 0 : query.getPageNo(), query.getPageSize() == null ? PageSize.SIZE15.getSize() : query.getPageSize());
         QueryWrapper<QuestionInfo> queryWrapper = judgeTextQW(query);
         if (query.getTitleFuzzy() != null) {
             queryWrapper.like("title", query.getTitleFuzzy());
@@ -95,7 +95,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
     }
 
     /**
-     * @Description TODO
+     * @Description 显示下一条
      * @Author Lenove
      * @Date 2024/6/1
      * @MethodName showDetailNext
@@ -141,7 +141,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
     protected QueryWrapper<QuestionInfo> judgeTextQW(QuestionInfoQuery query) {
         QueryWrapper<QuestionInfo> queryWrapper = new QueryWrapper<>();
         if (query.getQueryTextContent() != null && !query.getQueryTextContent()) {
-            queryWrapper.select(QuestionInfo.class, info -> !(info.getColumn().equals("question") || info.getColumn().equals("answer_analysis")));
+            queryWrapper.select(QuestionInfo.class, info -> !(info.getColumn().equals("question") && info.getColumn().equals("answer_analysis")));
         }
         return queryWrapper;
     }
