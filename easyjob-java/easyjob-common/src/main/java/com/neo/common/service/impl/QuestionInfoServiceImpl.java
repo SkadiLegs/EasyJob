@@ -153,7 +153,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
     @Override
     public void removeBatchQIF(String questionIds, Integer userId) {
         String[] questionIdsArray = questionIds.split(",");
-        if (userId != null && !userId.equals(appConfig.getSuperAdminPhones())) {
+        if (userId != null) {
             QuestionInfoQuery queryQIF = new QuestionInfoQuery();
             queryQIF.setQuestionIds(questionIdsArray);
             QueryWrapper<QuestionInfo> queryWrapper = judgeTextQW(queryQIF);

@@ -21,4 +21,7 @@ public interface ExamQuestionService extends IService<ExamQuestion> {
 
     void saveExamQuestion(List<ExamQuestionItem> examQuestionItemList, ExamQuestion examQuestion, boolean isSuperAdmin);
 
+    void updateBatch(ExamQuestionQuery query, ExamQuestion examQuestion);
+
+    void removeExamQuestion(List<String> questionIds, Integer integer);
 }

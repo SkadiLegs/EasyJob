@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.neo.common.entity.enums.PageSize;
+import com.neo.common.entity.enums.PostStatusEnum;
 import com.neo.common.entity.po.Category;
 import com.neo.common.entity.po.ExamQuestion;
 import com.neo.common.entity.po.ExamQuestionItem;
@@ -20,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -138,5 +140,30 @@ public class ExamQuestionServiceImpl extends ServiceImpl<ExamQuestionMapper, Exa
         if (!delList.isEmpty()) {
             examQuestionItemMapper.deleteBatchIds(delList);
         }
+    }
+
+    @Override
+    public void updateBatch(ExamQuestionQuery query, ExamQuestion examQuestion) {
+        List<String> list = Arrays.asList(query.getQuestionIds());
+        baseMapper.updateBatchStatus(list, examQuestion);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void removeExamQuestion(List<String> questionIds, Integer userId) {
+        if (userId != null) {
+            List<ExamQuestion> examQuestions = examQuestionMapper.selectList(new QueryWrapper<ExamQuestion>().select("question_id", "create_user_id").in("question_id", questionIds));
+            List<ExamQuestion> currentUserDataList = examQuestions.stream().filter(a -> !a.getCreateUserId().equals(String.valueOf(userId))).collect(Collectors.toList());
+            if (!currentUserDataList.isEmpty()) {
+                throw new EasyJobException(ResultCode.ERROR_NAN, "删除列表中包含非当前用户创建的数据");
+            }
+        }
+        QueryWrapper<ExamQuestion> queryWrapper = new QueryWrapper();
+        queryWrapper.eq("status", PostStatusEnum.NO_POST.getStatus());
+        queryWrapper.in("question_id", questionIds);
+        examQuestionMapper.delete(queryWrapper);
+        QueryWrapper<ExamQuestionItem> questionItemQueryWrapper = new QueryWrapper<>();
+        questionItemQueryWrapper.in("question_id", questionIds);
+        examQuestionItemMapper.delete(questionItemQueryWrapper);
     }
 }

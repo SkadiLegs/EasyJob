@@ -74,7 +74,6 @@ public class CategoryController {
     }
 
     @PostMapping("/loadAllCategory4Select")
-    @GlobalInterceptor(permissionCode = PermissionCodeEnum.CATEOGRY_LIST)
     public R loadAllCategory4Select(@VerifyParam(required = true) Integer type) {
         List<Category> categories = categoryService.categorySelectType(type);
         return R.ok().data(categories);
