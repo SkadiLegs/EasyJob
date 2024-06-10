@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.neo.admin.annotation.GlobalInterceptor;
 import com.neo.common.annotation.VerifyParam;
 import com.neo.common.entity.constants.Constants;
+import com.neo.common.entity.dto.ImportErrorItem;
 import com.neo.common.entity.dto.SessionUserAdminDto;
 import com.neo.common.entity.enums.PermissionCodeEnum;
 import com.neo.common.entity.enums.PostStatusEnum;
@@ -23,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -126,4 +128,14 @@ public class ExamQuestionController {
         examQuestionService.removeExamQuestion(questionIdList, sessionUserAdminDto.getSuperAdmin() ? null : sessionUserAdminDto.getUserId());
         return R.ok();
     }
+
+    @RequestMapping("/importExamQuestion")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.EXAM_QUESTION_IMPORT)
+    public R importExamQuestion(HttpSession session, MultipartFile file) {
+        SessionUserAdminDto sessionUserAdminDto = (SessionUserAdminDto) session.getAttribute(Constants.SESSION_KEY);
+        List<ImportErrorItem> importErrorItems = examQuestionService.importExamQuestion(file, sessionUserAdminDto);
+        return R.ok().data(importErrorItems);
+    }
+
+
 }

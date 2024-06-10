@@ -123,12 +123,11 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
             queryWrapper.eq("type", type);
         }
         queryWrapper.orderByAsc("sort");
-        List<Category> categories = categoryMapper.selectList(queryWrapper);
-        return categories;
+        return categoryMapper.selectList(queryWrapper);
     }
 
     @Override
-    public List<Category> loadAllCategpryByType(Integer type) {
+    public List<Category> loadAllCategoryByType(Integer type) {
 
         CategoryTypeEnum typeEnum = CategoryTypeEnum.getByType(type);
         if (typeEnum == null) {
@@ -136,7 +135,6 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
         }
         QueryWrapper<Category> queryWrapper = new QueryWrapper();
         queryWrapper.orderByAsc("sort").in("type", Arrays.asList(typeEnum.getType(), CategoryTypeEnum.QUESTION_EXAM.getType()));
-        List<Category> categories = categoryMapper.selectList(queryWrapper);
-        return categories;
+        return categoryMapper.selectList(queryWrapper);
     }
 }

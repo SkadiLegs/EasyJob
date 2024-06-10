@@ -186,7 +186,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
 
     @Override
     public List<ImportErrorItem> importQuestion(MultipartFile file, SessionUserAdminDto sessionUserAdminDto) {
-        List<Category> categories = categoryService.loadAllCategpryByType(CategoryTypeEnum.QUESTION.getType());
+        List<Category> categories = categoryService.loadAllCategoryByType(CategoryTypeEnum.QUESTION.getType());
         // 将分类列表转换为以分类名为键，分类对象为值的 Map
         Map<String, Category> categoryMap = categories.stream().collect(Collectors.toMap(Category::getCategoryName, Function.identity(), (data1, data2) -> data2));
         // 从 Excel 文件中读取数据，并将数据存储在一个二维列表中

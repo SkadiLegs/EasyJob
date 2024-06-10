@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/7 22:10&#10;题库模块列表,更改新增功能完成&#10;//TODO&#10;批量删除\删除,导入,发布\批量发布">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/8 22:35&#10;题库模块列表:&#10;删除/批量删除功能完成,批量发布/取消发布功能完成,发布/取消发布功能完成&#10;//TODO&#10;导入题库模块&#10;//bug:&#10;修复了用户有新增题库\问题权限,没有题型分类权限时无法添加问题\题库的bug,详情见博客">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ExamQuestionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ExamQuestionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/ExamQuestionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/ExamQuestionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ExamQuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ExamQuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +270,8 @@
       <workItem from="1717577598764" duration="11474000" />
       <workItem from="1717658758635" duration="16253000" />
       <workItem from="1717744703813" duration="10952000" />
-      <workItem from="1717834511992" duration="14966000" />
+      <workItem from="1717834511992" duration="15024000" />
+      <workItem from="1717988132089" duration="11726000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -446,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717762296317</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="2024/6/8 22:35&#10;题库模块列表:&#10;删除/批量删除功能完成,批量发布/取消发布功能完成,发布/取消发布功能完成&#10;//TODO&#10;导入题库模块&#10;//bug:&#10;修复了用户有新增题库\问题权限,没有题型分类权限时无法添加问题\题库的bug,详情见博客">
+      <option name="closed" value="true" />
+      <created>1717857452427</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1717857452427</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +519,8 @@
     <MESSAGE value="2024/6/4 18:01&#10;修改问题,下载导入问题模版,&#10;TODO&#10;question模块的批量导入未完成" />
     <MESSAGE value="2024/6/5 22:54&#10;通过Excel导入问题完成,问题模块完成" />
     <MESSAGE value="2024/6/7 22:10&#10;题库模块列表,更改新增功能完成&#10;//TODO&#10;批量删除\删除,导入,发布\批量发布" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/7 22:10&#10;题库模块列表,更改新增功能完成&#10;//TODO&#10;批量删除\删除,导入,发布\批量发布" />
+    <MESSAGE value="2024/6/8 22:35&#10;题库模块列表:&#10;删除/批量删除功能完成,批量发布/取消发布功能完成,发布/取消发布功能完成&#10;//TODO&#10;导入题库模块&#10;//bug:&#10;修复了用户有新增题库\问题权限,没有题型分类权限时无法添加问题\题库的bug,详情见博客" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/8 22:35&#10;题库模块列表:&#10;删除/批量删除功能完成,批量发布/取消发布功能完成,发布/取消发布功能完成&#10;//TODO&#10;导入题库模块&#10;//bug:&#10;修复了用户有新增题库\问题权限,没有题型分类权限时无法添加问题\题库的bug,详情见博客" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -575,12 +587,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java</url>
-          <line>137</line>
+          <line>136</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java</url>
-          <line>107</line>
+          <line>109</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -590,8 +602,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="70" />
+          <line>288</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java</url>
+          <line>252</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -27,5 +27,5 @@ public interface CategoryService extends IService<Category> {
     //
     List<Category> categorySelectType(Integer type);
 
-    List<Category> loadAllCategpryByType(Integer type);
+    List<Category> loadAllCategoryByType(Integer type);
 }

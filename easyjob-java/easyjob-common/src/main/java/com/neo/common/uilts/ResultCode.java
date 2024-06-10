@@ -4,7 +4,7 @@ public interface ResultCode {
     public static Integer SUCCESS = 20000;//成功
     public static Integer ERROR_OTHER = 20001;//其他失败
     public static Integer NOT_FOUND = 20002;//404
-    public static Integer ERROR_600 = 20003;//网络异常
+    public static Integer ERROR_600 = 20003;//数据(类型/格式)错误
     public static Integer ERROR_NAN = 20004;//空指针
     public static Integer ERROR_OUTTIME = 20005;//超时
     public static Integer ERROR_LOGIN_OUT_TIME = 901;//超时

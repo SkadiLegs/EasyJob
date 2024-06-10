@@ -73,9 +73,11 @@ public class CategoryController {
         return R.ok();
     }
 
-    @PostMapping("/loadAllCategory4Select")
+    @RequestMapping("/loadAllCategory4Select")
     public R loadAllCategory4Select(@VerifyParam(required = true) Integer type) {
-        List<Category> categories = categoryService.categorySelectType(type);
+        List<Category> categories = categoryService.loadAllCategoryByType(type);
+        System.out.println("type+++" + type);
+        System.out.println("categories" + categories);
         return R.ok().data(categories);
     }
 
