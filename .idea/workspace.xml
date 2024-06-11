@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/8 22:35&#10;题库模块列表:&#10;删除/批量删除功能完成,批量发布/取消发布功能完成,发布/取消发布功能完成&#10;//TODO&#10;导入题库模块&#10;//bug:&#10;修复了用户有新增题库\问题权限,没有题型分类权限时无法添加问题\题库的bug,详情见博客">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ExamQuestionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ExamQuestionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ExamQuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ExamQuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/ShareInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/ShareInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ShareInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ShareInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/ShareInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/ShareInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ShareInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ShareInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +103,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.EasyjobAdminApplication (1).executor": "Debug",
+    "Spring Boot.EasyjobAdminApplication (1).executor": "JRebel Executor",
     "Spring Boot.EasyjobAdminApplication.executor": "Run",
     "Spring Boot.EasyjobApiApplication.executor": "Run",
     "extract.method.default.visibility": "private",
@@ -271,7 +267,8 @@
       <workItem from="1717658758635" duration="16253000" />
       <workItem from="1717744703813" duration="10952000" />
       <workItem from="1717834511992" duration="15024000" />
-      <workItem from="1717988132089" duration="11726000" />
+      <workItem from="1717988132089" duration="12531000" />
+      <workItem from="1718092379418" duration="10493000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -457,7 +454,31 @@
       <option name="project" value="LOCAL" />
       <updated>1717857452427</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="2024/6/8 153&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择">
+      <option name="closed" value="true" />
+      <created>1718003095772</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718003095772</updated>
+    </task>
+    <task id="LOCAL-00025" summary="2024/6/8 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择">
+      <option name="closed" value="true" />
+      <created>1718003119450</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718003119450</updated>
+    </task>
+    <task id="LOCAL-00026" summary="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择">
+      <option name="closed" value="true" />
+      <created>1718003168698</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718003168698</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +541,10 @@
     <MESSAGE value="2024/6/5 22:54&#10;通过Excel导入问题完成,问题模块完成" />
     <MESSAGE value="2024/6/7 22:10&#10;题库模块列表,更改新增功能完成&#10;//TODO&#10;批量删除\删除,导入,发布\批量发布" />
     <MESSAGE value="2024/6/8 22:35&#10;题库模块列表:&#10;删除/批量删除功能完成,批量发布/取消发布功能完成,发布/取消发布功能完成&#10;//TODO&#10;导入题库模块&#10;//bug:&#10;修复了用户有新增题库\问题权限,没有题型分类权限时无法添加问题\题库的bug,详情见博客" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/8 22:35&#10;题库模块列表:&#10;删除/批量删除功能完成,批量发布/取消发布功能完成,发布/取消发布功能完成&#10;//TODO&#10;导入题库模块&#10;//bug:&#10;修复了用户有新增题库\问题权限,没有题型分类权限时无法添加问题\题库的bug,详情见博客" />
+    <MESSAGE value="2024/6/8 153&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
+    <MESSAGE value="2024/6/8 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
+    <MESSAGE value="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -586,11 +610,6 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java</url>
           <line>109</line>
           <option name="timeStamp" value="55" />
@@ -599,16 +618,6 @@
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/CommonUtils.java</url>
           <line>27</line>
           <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java</url>
-          <line>288</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java</url>
-          <line>252</line>
-          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

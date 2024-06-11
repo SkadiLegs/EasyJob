@@ -1,10 +1,21 @@
 package com.neo.common.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.neo.common.entity.enums.PageSize;
 import com.neo.common.entity.po.ShareInfo;
+import com.neo.common.entity.query.ShareInfoQuery;
+import com.neo.common.entity.vo.PaginationResultVO;
+import com.neo.common.exceptionhandler.EasyJobException;
 import com.neo.common.mapper.ShareInfoMapper;
 import com.neo.common.service.ShareInfoService;
+import com.neo.common.uilts.ResultCode;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Description TODO
@@ -16,4 +27,67 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ShareInfoServiceImpl extends ServiceImpl<ShareInfoMapper, ShareInfo> implements ShareInfoService {
+
+    @Resource
+    ShareInfoMapper shareInfoMapper;
+
+    @Override
+    public PaginationResultVO selectPage(ShareInfoQuery query) {
+        Page<ShareInfo> page = new Page(query.getPageNo() == null ? 0 : query.getPageNo(), query.getPageSize() == null ? PageSize.SIZE15.getSize() : query.getPageSize());
+        QueryWrapper<ShareInfo> queryWrapper = new QueryWrapper();
+        if (!query.getQueryTextContent()) {
+            queryWrapper.select(ShareInfo.class, tableFieldInfo -> !tableFieldInfo.getColumn().equals("content"));
+        }
+        if (query.getTitleFuzzy() != null) {
+            queryWrapper.like("title", query.getTitleFuzzy());
+        }
+        if (query.getCreateUserNameFuzzy() != null) {
+            queryWrapper.like("create_user_name", query.getCreateUserNameFuzzy());
+        }
+        if (query.getStatus() != null) {
+            queryWrapper.eq("status", query.getStatus());
+        }
+        Page<ShareInfo> shareInfoPage = shareInfoMapper.selectPage(page, queryWrapper);
+        PaginationResultVO<ShareInfo> paginationResultVO = new PaginationResultVO<>(
+                (int) shareInfoPage.getTotal(),
+                (int) shareInfoPage.getSize(),
+                (int) shareInfoPage.getCurrent(),
+                (int) shareInfoPage.getPages(),
+                shareInfoPage.getRecords());
+        return paginationResultVO;
+    }
+
+
+    @Override
+    public void updateStatus(ShareInfoQuery shareInfoQuery, String shareIds) {
+        List<String> shareId_list = Arrays.asList(shareIds.split(","));
+        QueryWrapper<ShareInfo> queryWrapper = new QueryWrapper();
+        queryWrapper.in("share_id", shareId_list);
+        shareInfoMapper.updateByShareInfoId(shareId_list, shareInfoQuery);
+    }
+
+    @Override
+    public Integer saveShareInfo(ShareInfoQuery shareInfoQuery, Boolean superAdmin) {
+        int saveDateNum = 0;
+
+        ShareInfo shareInfo = new ShareInfo();
+        shareInfo.setTitle(shareInfoQuery.getTitle());
+        shareInfo.setCoverPath(shareInfoQuery.getCoverPath());
+        shareInfo.setCoverType(shareInfoQuery.getCoverType());
+        shareInfo.setCreateUserId(shareInfoQuery.getCreateUserId());
+        shareInfo.setContent(shareInfoQuery.getContent());
+        shareInfo.setCreateUserName(shareInfoQuery.getCreateUserName());
+        if (shareInfoQuery.getShareId() == null) {
+            saveDateNum = shareInfoMapper.insert(shareInfo);
+        } else {
+            ShareInfo dbShareInfo = shareInfoMapper.selectById(shareInfoQuery.getShareId());
+            if (shareInfoQuery.getCreateUserId().equals(dbShareInfo.getCreateUserId()) && !superAdmin) {
+                throw new EasyJobException(ResultCode.ERROR_600, "该用户无法修改其他用户的数据");
+            }
+            shareInfo.setShareId(shareInfoQuery.getShareId());
+            saveDateNum = shareInfoMapper.updateById(shareInfo);
+        }
+
+        return saveDateNum;
+    }
 }

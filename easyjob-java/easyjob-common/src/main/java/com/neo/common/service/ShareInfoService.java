@@ -2,6 +2,8 @@ package com.neo.common.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.neo.common.entity.po.ShareInfo;
+import com.neo.common.entity.query.ShareInfoQuery;
+import com.neo.common.entity.vo.PaginationResultVO;
 
 /**
  * @Description TODO
@@ -12,4 +14,9 @@ import com.neo.common.entity.po.ShareInfo;
  * @Params
  */
 public interface ShareInfoService extends IService<ShareInfo> {
+    PaginationResultVO selectPage(ShareInfoQuery query);
+
+    void updateStatus(ShareInfoQuery shareInfoQuery, String shareIds);
+
+    Integer saveShareInfo(ShareInfoQuery shareInfoQuery, Boolean superAdmin);
 }
