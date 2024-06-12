@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Description TODO
@@ -89,5 +90,21 @@ public class ShareInfoServiceImpl extends ServiceImpl<ShareInfoMapper, ShareInfo
         }
 
         return saveDateNum;
+    }
+
+    @Override
+    public void removeBatchShareInfo(String[] shareIds, Integer userid) {
+        List<String> ShareIds_list = Arrays.asList(shareIds);
+        QueryWrapper<ShareInfo> queryWrapper = new QueryWrapper();
+        queryWrapper.select("share_id", "create_user_id", "create_user_name");
+        queryWrapper.in("share_id", ShareIds_list);
+        List<ShareInfo> dbShareInfo = shareInfoMapper.selectList(queryWrapper);
+        if (userid != null) {
+            List<ShareInfo> badShareInfo = dbShareInfo.stream().filter(item -> !item.getCreateUserId().equals(String.valueOf(userid))).collect(Collectors.toList());
+            if (!badShareInfo.isEmpty()) {
+                throw new EasyJobException(ResultCode.ERROR_NOPERMISSION, "删除的队列中存在非该用户创建的数据");
+            }
+        }
+        shareInfoMapper.deleteBatchIds(ShareIds_list);
     }
 }

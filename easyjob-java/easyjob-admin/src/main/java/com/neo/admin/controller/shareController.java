@@ -82,7 +82,24 @@ public class shareController {
         shareInfoQuery.setCreateUserName(sessionUserAdminDto.getUserName());
         shareInfoService.saveShareInfo(shareInfoQuery, sessionUserAdminDto.getSuperAdmin());
         return R.ok();
+    }
 
+    @RequestMapping("/delShare")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SHARE_DEL)
+    public R delShare(HttpSession session, @VerifyParam(required = true) String shareIds) {
+        SessionUserAdminDto sessionAttribute = (SessionUserAdminDto) session.getAttribute(Constants.SESSION_KEY);
+        String[] splitIds = shareIds.split(",");
+        shareInfoService.removeBatchShareInfo(splitIds, sessionAttribute.getSuperAdmin() ? null : sessionAttribute.getUserId());
+        return R.ok();
+    }
+
+    @RequestMapping("/delShareBatch")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.SHARE_DEL_BATCH)
+    public R delShareBatch(HttpSession session, @VerifyParam(required = true) String shareIds) {
+        SessionUserAdminDto sessionAttribute = (SessionUserAdminDto) session.getAttribute(Constants.SESSION_KEY);
+        String[] splitIds = shareIds.split(",");
+        shareInfoService.removeBatchShareInfo(splitIds, sessionAttribute.getSuperAdmin() ? null : sessionAttribute.getUserId());
+        return R.ok();
     }
 
 

@@ -19,4 +19,6 @@ public interface ShareInfoService extends IService<ShareInfo> {
     void updateStatus(ShareInfoQuery shareInfoQuery, String shareIds);
 
     Integer saveShareInfo(ShareInfoQuery shareInfoQuery, Boolean superAdmin);
+
+    void removeBatchShareInfo(String[] shareIds, Integer userId);
 }
