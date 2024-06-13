@@ -4,6 +4,7 @@ package com.neo.common.entity.po;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.neo.common.entity.enums.DateTimePatternEnum;
 import com.neo.common.uilts.DateUtil;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -13,6 +14,7 @@ import java.util.Date;
 /**
  * 用户在线考试
  */
+@Data
 public class AppExam implements Serializable {
 
 

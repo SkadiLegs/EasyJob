@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.neo.common.entity.enums.DateTimePatternEnum;
 import com.neo.common.uilts.DateUtil;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -16,6 +18,8 @@ import java.util.Date;
 /**
  *
  */
+@Data
+@NoArgsConstructor
 public class AppUserInfo implements Serializable {
 
 
@@ -55,6 +59,7 @@ public class AppUserInfo implements Serializable {
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill = FieldFill.INSERT)
     private Date joinTime;
 
     /**
@@ -62,7 +67,7 @@ public class AppUserInfo implements Serializable {
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @TableField(fill = FieldFill.UPDATE)
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date lastLoginTime;
 
     /**

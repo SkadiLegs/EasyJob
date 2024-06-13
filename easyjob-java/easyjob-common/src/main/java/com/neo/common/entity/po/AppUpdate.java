@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.neo.common.entity.enums.DateTimePatternEnum;
 import com.neo.common.uilts.CommonUtils;
 import com.neo.common.uilts.DateUtil;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -15,6 +16,7 @@ import java.util.Date;
 /**
  * app发布
  */
+@Data
 public class AppUpdate implements Serializable {
 
 

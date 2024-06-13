@@ -1,6 +1,7 @@
 package com.neo.common.entity.po;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -8,6 +9,7 @@ import java.io.Serializable;
 /**
  * 考试问题
  */
+@Data
 public class AppExamQuestion implements Serializable {
 
 
@@ -42,54 +44,6 @@ public class AppExamQuestion implements Serializable {
      */
     private Integer answerResult;
 
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getId() {
-        return this.id;
-    }
-
-    public void setExamId(Integer examId) {
-        this.examId = examId;
-    }
-
-    public Integer getExamId() {
-        return this.examId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getUserId() {
-        return this.userId;
-    }
-
-    public void setQuestionId(Integer questionId) {
-        this.questionId = questionId;
-    }
-
-    public Integer getQuestionId() {
-        return this.questionId;
-    }
-
-    public void setUserAnswer(String userAnswer) {
-        this.userAnswer = userAnswer;
-    }
-
-    public String getUserAnswer() {
-        return this.userAnswer;
-    }
-
-    public void setAnswerResult(Integer answerResult) {
-        this.answerResult = answerResult;
-    }
-
-    public Integer getAnswerResult() {
-        return this.answerResult;
-    }
 
     @Override
     public String toString() {

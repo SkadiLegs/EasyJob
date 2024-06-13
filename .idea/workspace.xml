@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/ShareInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/ShareInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ShareInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/ShareInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/ShareInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/ShareInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ShareInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ShareInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExamQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExamQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppFeedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/vo/PaginationResultVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/vo/PaginationResultVO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,12 +104,12 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.EasyjobAdminApplication (1).executor": "JRebel Executor",
+    "Spring Boot.EasyjobAdminApplication (1).executor": "Debug",
     "Spring Boot.EasyjobAdminApplication.executor": "Run",
     "Spring Boot.EasyjobApiApplication.executor": "Run",
     "extract.method.default.visibility": "private",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/workSpaceIdea/easyjob/easyjob-java/easyjob-admin/src/main/resources",
+    "last_opened_file_path": "D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -141,11 +142,11 @@
       <recent name="com.neo.common.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-admin\src\main\resources" />
-      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\mapper\xml" />
       <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\query" />
       <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\po" />
-      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\enums" />
+      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\entity\dto" />
+      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-admin\src\main\resources" />
+      <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\mapper\xml" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workSpaceIdea\easyjob\easyjob-java\easyjob-common\src\main\java\com\neo\common\mapper\xml" />
@@ -268,7 +269,9 @@
       <workItem from="1717744703813" duration="10952000" />
       <workItem from="1717834511992" duration="15024000" />
       <workItem from="1717988132089" duration="12531000" />
-      <workItem from="1718092379418" duration="10493000" />
+      <workItem from="1718092379418" duration="10795000" />
+      <workItem from="1718176035879" duration="10060000" />
+      <workItem from="1718265187215" duration="15273000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -478,7 +481,31 @@
       <option name="project" value="LOCAL" />
       <updated>1718003168698</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="2024/6/11 23:24&#10;经验分享模块:&#10;列表分页,新增数据,修改数据,发布/取消发布 完成&#10;//TODO:&#10;导入题库模块">
+      <option name="closed" value="true" />
+      <created>1718119549635</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1718119549635</updated>
+    </task>
+    <task id="LOCAL-00028" summary="2024/6/11 23:24&#10;经验分享模块:&#10;列表分页,新增数据,修改数据,发布/取消发布 完成&#10;//TODO:&#10;导入题库模块">
+      <option name="closed" value="true" />
+      <created>1718119563521</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1718119563521</updated>
+    </task>
+    <task id="LOCAL-00029" summary="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建">
+      <option name="closed" value="true" />
+      <created>1718201909187</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1718201909187</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +571,9 @@
     <MESSAGE value="2024/6/8 153&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
     <MESSAGE value="2024/6/8 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
     <MESSAGE value="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
+    <MESSAGE value="2024/6/11 23:24&#10;经验分享模块:&#10;列表分页,新增数据,修改数据,发布/取消发布 完成&#10;//TODO:&#10;导入题库模块" />
+    <MESSAGE value="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -621,9 +650,15 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.neo.common.entity.vo.PaginationResultVO" memberName="list" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="dataTitle" />
+        <watch expression="listByPage.list" />
       </configuration>
     </watches-manager>
   </component>
