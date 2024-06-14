@@ -57,7 +57,7 @@ public class ExamQuestionServiceImpl extends ServiceImpl<ExamQuestionMapper, Exa
     public PaginationResultVO<ExamQuestion> findListByPage(ExamQuestionQuery query) {
         Page<ExamQuestion> page = new Page<>(query.getPageNo() == null ? 1 : query.getPageNo(), query.getPageSize() == null ? PageSize.SIZE15.getSize() : query.getPageSize());
         QueryWrapper<ExamQuestion> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByAsc(query.getOrderBy());
+        queryWrapper.orderByAsc(query.getOrderByAsc());
         //queryAnswer==false是排除字段"questionAnswer"
         if (!query.getQueryAnswer()) {
             queryWrapper.select(ExamQuestion.class, tableFieldInfo -> !tableFieldInfo.getColumn().equals("question_answer") && !tableFieldInfo.getColumn().equals("answer_analysis"));

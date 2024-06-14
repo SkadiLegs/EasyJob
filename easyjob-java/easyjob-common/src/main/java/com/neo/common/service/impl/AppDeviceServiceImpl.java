@@ -31,7 +31,7 @@ public class AppDeviceServiceImpl extends ServiceImpl<AppDeviceMapper, AppDevice
     @Override
     public PaginationResultVO<AppDevice> findListByPage(AppDeviceQuery query) {
         QueryWrapper<AppDevice> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByDesc(query.getOrderBy());
+        queryWrapper.orderByDesc(query.getOrderByDesc());
         if (query.getDeviceBrandFuzzy() != null) {
             queryWrapper.like("device_brand", query.getDeviceBrandFuzzy());
         }

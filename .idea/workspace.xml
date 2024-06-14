@@ -4,14 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/14 21:20&#10;app模块:&#10;轮播图/问题反馈获取列表完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成">
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppCarouselController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppFeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/config/MyWebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/AppCarouselMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/AppFeedbackMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/AppCarouselMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/mapper/xml/AppFeedbackMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/AppCarouselService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/AppFeedbackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppCarouselServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppFeedbackServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExamQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppExamQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppFeedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/vo/PaginationResultVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/vo/PaginationResultVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppUserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppUserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/QuestionInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/shareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/shareController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/AppUserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/target/classes/com/neo/admin/controller/AppUserInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/AppFeedbackQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/AppFeedbackQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/BaseParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query/BaseParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppDeviceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppDeviceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppUserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppUserInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/SysRoleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +298,8 @@
       <workItem from="1717988132089" duration="12531000" />
       <workItem from="1718092379418" duration="10795000" />
       <workItem from="1718176035879" duration="10060000" />
-      <workItem from="1718265187215" duration="15273000" />
+      <workItem from="1718265187215" duration="15610000" />
+      <workItem from="1718334697165" duration="18814000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -505,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718201909187</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="2024/6/13 22:16&#10;app模块:&#10;设备管理页面完成,用户管理页面查询/发布/禁用完成,&#10;//bug&#10;前端无法获取后端查询的数据(已解决&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成">
+      <option name="closed" value="true" />
+      <created>1718288265011</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1718288265011</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +585,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="create github" />
     <MESSAGE value="create main github" />
     <MESSAGE value="第一次提交" />
     <MESSAGE value="TEST" />
@@ -573,7 +608,9 @@
     <MESSAGE value="2024/6/10 15:03&#10;题库模块列表:&#10;导入题库模块完成&#10;//bug:&#10;问题分类模块:无论是在八股文模块还是在题库模块,新建类型时都是返回八股文模块分类选择,无法加载题库模块选择" />
     <MESSAGE value="2024/6/11 23:24&#10;经验分享模块:&#10;列表分页,新增数据,修改数据,发布/取消发布 完成&#10;//TODO:&#10;导入题库模块" />
     <MESSAGE value="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建" />
+    <MESSAGE value="2024/6/13 22:16&#10;app模块:&#10;设备管理页面完成,用户管理页面查询/发布/禁用完成,&#10;//bug&#10;前端无法获取后端查询的数据(已解决&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
+    <MESSAGE value="2024/6/14 21:20&#10;app模块:&#10;轮播图/问题反馈获取列表完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/14 21:20&#10;app模块:&#10;轮播图/问题反馈获取列表完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,7 +667,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java</url>
-          <line>151</line>
+          <line>152</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -647,6 +684,11 @@
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/CommonUtils.java</url>
           <line>27</line>
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppCarouselServiceImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

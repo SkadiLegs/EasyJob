@@ -39,7 +39,7 @@ public class AppUserInfoController {
     @PostMapping("/loadDeviceList")
     @GlobalInterceptor
     public R loadDeviceList(AppDeviceQuery query) {
-        query.setOrderBy("create_time");
+        query.setOrderByDesc("create_time");
         PaginationResultVO<AppDevice> listByPage = appDeviceService.findListByPage(query);
         return R.ok().data(listByPage);
     }
@@ -47,7 +47,7 @@ public class AppUserInfoController {
     @RequestMapping("/loadDataList")
     @GlobalInterceptor
     public R loadDataList(AppUserInfoQuery query) {
-        query.setOrderBy("join_time");
+        query.setOrderByDesc("join_time");
         PaginationResultVO<AppUserInfo> listByPage = appUserInfoService.findListByPage(query);
         return R.ok().data(listByPage);
     }

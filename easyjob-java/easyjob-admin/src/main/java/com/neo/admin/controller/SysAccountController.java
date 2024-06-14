@@ -52,7 +52,7 @@ public class SysAccountController {
     @PostMapping("/loadAccountList")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ACCOUNT_LIST)
     public R loadAccountList(SysAccountQuery sysAccountQuery) {
-        sysAccountQuery.setOrderBy("create_time");
+        sysAccountQuery.setOrderByDesc("create_time");
         Page<SysAccount> sysAccountPage = sysAccountService.selectByPage(sysAccountQuery);
         PaginationResultVO<SysAccount> paginationResultVO =
                 new PaginationResultVO<>(

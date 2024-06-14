@@ -61,7 +61,7 @@ public class SysAccountServiceImpl extends ServiceImpl<SysAccountMapper, SysAcco
                 adminDto.setSuperAdmin(true);
                 // 查询所有表sys_menu中所有数据
                 SysMenuQuery query = new SysMenuQuery();
-                query.setOrderBy("sort");
+                query.setOrderByAsc("sort");
                 // 这条数据是为了不将数据放到"所有菜单"下
                 query.setFormate2Tree(false);
                 sysMenuList = sysMenuService.findLisByParam(query);
@@ -111,7 +111,7 @@ public class SysAccountServiceImpl extends ServiceImpl<SysAccountMapper, SysAcco
     public Page<SysAccount> selectByPage(SysAccountQuery sysAccountQuery) {
         Page<SysAccount> page = new Page(sysAccountQuery.getPageNo() == null ? 1 : sysAccountQuery.getPageNo(), sysAccountQuery.getPageSize() == null ? 15 : sysAccountQuery.getPageSize());
         QueryWrapper<SysAccount> queryWrapper = new QueryWrapper();
-        queryWrapper.orderByDesc(sysAccountQuery.getOrderBy());
+        queryWrapper.orderByDesc(sysAccountQuery.getOrderByDesc());
         if (sysAccountQuery.getPhoneFuzzy() != null) {
             queryWrapper.like("phone", sysAccountQuery.getPhoneFuzzy());
         }

@@ -48,6 +48,7 @@ public class ShareInfoServiceImpl extends ServiceImpl<ShareInfoMapper, ShareInfo
         if (query.getStatus() != null) {
             queryWrapper.eq("status", query.getStatus());
         }
+        queryWrapper.orderByDesc(query.getOrderByDesc());
         Page<ShareInfo> shareInfoPage = shareInfoMapper.selectPage(page, queryWrapper);
         PaginationResultVO<ShareInfo> paginationResultVO = new PaginationResultVO<>(
                 (int) shareInfoPage.getTotal(),

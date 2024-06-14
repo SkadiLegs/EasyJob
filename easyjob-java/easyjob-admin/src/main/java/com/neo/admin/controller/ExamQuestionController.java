@@ -52,7 +52,7 @@ public class ExamQuestionController {
     @PostMapping("/loadDataList")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.EXAM_QUESTION_LIST)
     public R loadDataList(ExamQuestionQuery query) {
-        query.setOrderBy("question_id");
+        query.setOrderByAsc("question_id");
         // 是否查询答案
         query.setQueryAnswer(true);
         PaginationResultVO<ExamQuestion> listByPage = examQuestionService.findListByPage(query);

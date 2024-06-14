@@ -36,7 +36,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     @Override
     public List<SysMenu> findLisByParam(SysMenuQuery query) {
         QueryWrapper<SysMenu> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByAsc(query.getOrderBy());
+        queryWrapper.orderByAsc(query.getOrderByAsc());
         List<SysMenu> menuList = baseMapper.selectList(queryWrapper);
         //加上"所有菜单"的这一属性并递归排序
         if (query.getFormate2Tree() != null && query.getFormate2Tree()) {

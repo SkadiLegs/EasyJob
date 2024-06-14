@@ -43,7 +43,7 @@ public class SysMenuController extends ABaseController {
     public R loadDataList() {
         SysMenuQuery query = new SysMenuQuery();
         query.setFormate2Tree(true);
-        query.setOrderBy("sort");
+        query.setOrderByAsc("sort");
         List<SysMenu> menuList = sysMenuService.findLisByParam(query);
         return R.ok().data(menuList);
     }

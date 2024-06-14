@@ -41,7 +41,7 @@ public class QuestionInfoController {
     @PostMapping("/loadDataList")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_LIST)
     public R LoadDataList(QuestionInfoQuery query) {
-        query.setOrderBy("question_id");
+        query.setOrderByDesc("question_id");
         query.setQueryTextContent(true);
         Page<QuestionInfo> questionInfos = questionInfoService.selectPageQIList(query);
         PaginationResultVO paginationResultVO = new PaginationResultVO<>(

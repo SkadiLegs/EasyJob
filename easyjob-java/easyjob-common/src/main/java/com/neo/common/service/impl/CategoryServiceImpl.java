@@ -32,7 +32,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
     @Override
     public List<Category> selectList(CategoryQuery query) {
         QueryWrapper<Category> queryWrapper = new QueryWrapper();
-        queryWrapper.orderByAsc(query.getOrderBy());
+        queryWrapper.orderByAsc(query.getOrderByAsc());
         return categoryMapper.selectList(queryWrapper);
     }
 

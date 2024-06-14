@@ -36,7 +36,7 @@ public class shareController {
     @PostMapping("/loadDataList")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.SHARE_LIST)
     public R loadDataList(ShareInfoQuery query) {
-        query.setOrderBy("desc");
+        query.setOrderByDesc("share_id");
         query.setQueryTextContent(true);
         PaginationResultVO paginationResultVO = shareInfoService.selectPage(query);
         return R.ok().data(paginationResultVO);

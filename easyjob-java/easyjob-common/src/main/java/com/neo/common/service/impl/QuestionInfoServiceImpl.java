@@ -72,7 +72,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
         if (query.getCategoryId() != null) {
             queryWrapper.eq("category_id", query.getCategoryId());
         }
-        queryWrapper.orderByDesc(query.getOrderBy());
+        queryWrapper.orderByDesc(query.getOrderByDesc());
         return questionInfoMapper.selectPage(questionInfoPage, queryWrapper);
     }
 

@@ -35,7 +35,7 @@ public class SysRoleController extends ABaseController {
     @PostMapping("/loadRoles")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_LIST)
     public R loadRoles(SysRoleQuery query) {
-        query.setOrderBy("create_time");
+        query.setOrderByDesc("create_time");
         PaginationResultVO<SysRole> listByPage = sysRoleService.findListByPage(query);
         return R.ok().data(listByPage);
     }
@@ -44,7 +44,7 @@ public class SysRoleController extends ABaseController {
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.SETTINGS_ROLE_LIST)
     public R loadAllRoles() {
         SysRoleQuery query = new SysRoleQuery();
-        query.setOrderBy("create_time");
+        query.setOrderByDesc("create_time");
         return R.ok().data(sysRoleService.findListByParam(query).getRecords());
     }
 

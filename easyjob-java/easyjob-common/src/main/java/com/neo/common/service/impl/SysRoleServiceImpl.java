@@ -123,7 +123,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         if (param.getRoleDescFuzzy() != null) {
             queryWrapper.like("role_desc", param.getRoleDescFuzzy());
         }
-        queryWrapper.orderByDesc(param.getOrderBy());
+        queryWrapper.orderByDesc(param.getOrderByDesc());
         Page selectPage = sysRoleMapper.selectPage(page, queryWrapper);
         return selectPage;
     }
@@ -182,7 +182,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         if (StringUtils.hasText(query.getRoleNameFuzzy())) {
             queryWrapper.like("role_name", query.getRoleNameFuzzy());
         }
-        queryWrapper.orderByDesc(query.getOrderBy());
+        queryWrapper.orderByDesc(query.getOrderByDesc());
         Page<SysRole> page = new Page<>(1, query.getPageSize() == null ? 15 : query.getPageSize());//当前页码为1,显示15条
         Page<SysRole> sysRolePage = sysRoleMapper.selectPage(page, queryWrapper);
         PaginationResultVO<SysRole> paginationResultVO = new PaginationResultVO<>(countByParam, (int) sysRolePage.getSize(), (int) sysRolePage.getCurrent(), (int) sysRolePage.getPages(), sysRolePage.getRecords());

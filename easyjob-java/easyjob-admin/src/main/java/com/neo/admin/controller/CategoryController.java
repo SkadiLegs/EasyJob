@@ -32,7 +32,7 @@ public class CategoryController {
     @PostMapping("/loadAllCategory")
     @GlobalInterceptor(permissionCode = PermissionCodeEnum.CATEOGRY_LIST)
     public R loadAllCategory(CategoryQuery query) {
-        query.setOrderBy("sort");
+        query.setOrderByAsc("sort");
         List<Category> categories = categoryService.selectList(query);
         return R.ok().data(categories);
     }

@@ -40,7 +40,7 @@ public class AppUserInfoServiceImpl extends ServiceImpl<AppUserInfoMapper, AppUs
         if (query.getLastUseDeviceIdFuzzy() != null) {
             queryWrapper.like("last_use_device_id", query.getLastUseDeviceIdFuzzy());
         }
-        queryWrapper.orderByDesc(query.getOrderBy());
+        queryWrapper.orderByDesc(query.getOrderByDesc());
         Page<AppUserInfo> pageAppUserInfo = appUserInfoMapper.selectPage(page, queryWrapper);
         PaginationResultVO<AppUserInfo> paginationResultVO = new PaginationResultVO<>(
                 (int) pageAppUserInfo.getTotal(),

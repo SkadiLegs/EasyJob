@@ -87,6 +87,7 @@ public class FileController {
         }
 
         return R.ok().data(realFilePath);
+//        return R.ok().data(localFile);//保存绝对路径
     }
 
     @RequestMapping("/getImage/{imageFolder}/{imageName}")
