@@ -25,5 +25,8 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void updateFill(MetaObject metaObject) {
         this.strictUpdateFill(metaObject, "updateTime", Date.class, new Date()); // 更新时间
+        this.strictUpdateFill(metaObject, "clientLastSendTime", Date.class, new Date()); // Feedback最后回复时间
     }
+
+
 }
