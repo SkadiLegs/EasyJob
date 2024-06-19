@@ -11,4 +11,6 @@ public interface ResultCode {
     static Integer ERROR_NOPERMISSION = 902;//权限不足
     public static Integer ERROR_BAD = 20006;//创建文件失败
     static Integer CODE_601 = 60001;
+    static Integer VERSION_ERROR = 92000; //版本错误
+    static Integer APPUPDATE_BAD = 91000; //app更新失败
 }

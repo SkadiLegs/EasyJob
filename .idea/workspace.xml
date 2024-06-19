@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/14 21:20&#10;app模块:&#10;轮播图/问题反馈获取列表完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppFeedbackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/config/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/config/MyMetaObjectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppFeedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/AppFeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/AppFeedbackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppFeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppFeedbackServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +270,8 @@
       <workItem from="1718176035879" duration="10060000" />
       <workItem from="1718265187215" duration="15610000" />
       <workItem from="1718334697165" duration="18893000" />
-      <workItem from="1718608080454" duration="11439000" />
+      <workItem from="1718608080454" duration="11667000" />
+      <workItem from="1718778714417" duration="8160000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -522,7 +521,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718371363188</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成">
+      <option name="closed" value="true" />
+      <created>1718628829827</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1718628829827</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +573,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="create main github" />
     <MESSAGE value="第一次提交" />
     <MESSAGE value="TEST" />
     <MESSAGE value="2024/5/14 22:34 aop切面登陆参数校验完成" />
@@ -591,7 +597,8 @@
     <MESSAGE value="2024/6/12 22:16&#10;经验分享模块:&#10;删除/批量删除完成,app模块po构建完成&#10;//TODO:&#10;app管理模块Controller,service,mapper等的构建" />
     <MESSAGE value="2024/6/13 22:16&#10;app模块:&#10;设备管理页面完成,用户管理页面查询/发布/禁用完成,&#10;//bug&#10;前端无法获取后端查询的数据(已解决&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
     <MESSAGE value="2024/6/14 21:20&#10;app模块:&#10;轮播图/问题反馈获取列表完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/14 21:20&#10;app模块:&#10;轮播图/问题反馈获取列表完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
+    <MESSAGE value="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -670,6 +677,11 @@
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppCarouselServiceImpl.java</url>
           <line>50</line>
           <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppUpdateServiceImpl.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -104,15 +104,14 @@ public class AppFeedbackServiceImpl extends ServiceImpl<AppFeedbackMapper, AppFe
         List<AppFeedback> appFeedbacks = new ArrayList<>();
         QueryWrapper<AppFeedback> queryWrapper = new QueryWrapper();
         /**
-         * 当选中问题的pFeedbackId=0时代表选中的是一个新问题,他不是某一个问题的追问,这时在返回的List中先添加这个问题,再查询出和他feedbackId相同的pFeedbackId的数据并加入返回的List
+         * 当选中问题的pFeedbackId=0时代表选中的是一个新问题,查询出和他feedbackId相同的pFeedbackId的数据和他本身并加入返回的List
          *当选中问题的pFeedbackId!=0时代表选中的是一个追问,这时直接查询这个问题的父问题,再查询和他pFeedbackId相同的其他数据,然后返回
          */
         if (DBappFeedback.getPFeedbackId() != 0) {
             queryWrapper.eq("p_feedback_id", DBappFeedback.getPFeedbackId()).or().eq("feedback_id", DBappFeedback.getPFeedbackId()).orderByAsc(appFeedbackQuery.getOrderByAsc());
             appFeedbacks = appFeedbackMapper.selectList(queryWrapper);
         } else {
-            appFeedbacks.add(DBappFeedback);
-            queryWrapper.eq("p_feedback_id", appFeedbackQuery.getFeedbackId()).orderByAsc(appFeedbackQuery.getOrderByAsc());
+            queryWrapper.eq("p_feedback_id", appFeedbackQuery.getFeedbackId()).or().eq("feedback_id", appFeedbackQuery.getFeedbackId()).orderByAsc(appFeedbackQuery.getOrderByAsc());
             List<AppFeedback> appFeedbacks_db = appFeedbackMapper.selectList(queryWrapper);
             appFeedbacks.addAll(appFeedbacks_db);
         }

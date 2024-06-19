@@ -1,6 +1,8 @@
 package com.neo.common.entity.po;
 
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.neo.common.entity.enums.DateTimePatternEnum;
@@ -47,6 +49,7 @@ public class AppUpdate implements Serializable {
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
     /**
@@ -58,7 +61,7 @@ public class AppUpdate implements Serializable {
      * 灰度设备ID
      */
     private String grayscaleDevice;
-
+    @TableField(exist = false)
     private String[] updateDescArray;
 
     public String[] getUpdateDescArray() {
