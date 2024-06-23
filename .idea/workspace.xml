@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/17 20:51&#10;app模块:&#10;app发布模块完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;内容管理模块题库管理,经验分享两个模块未完成详情展示方法&#10;首页数据分析">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/po/AppUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppFeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppFeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppFeedbackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppUpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/AppUpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/ExamQuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/shareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/shareController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ExamQuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ExamQuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ShareInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/ShareInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ExamQuestionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/IndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/IndexServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/ShareInfoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +278,8 @@
       <workItem from="1718265187215" duration="15610000" />
       <workItem from="1718334697165" duration="18893000" />
       <workItem from="1718608080454" duration="11667000" />
-      <workItem from="1718778714417" duration="8160000" />
+      <workItem from="1718778714417" duration="8525000" />
+      <workItem from="1719129198868" duration="8582000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -529,7 +537,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718628829827</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="2024/6/17 20:51&#10;app模块:&#10;app发布模块完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;内容管理模块题库管理,经验分享两个模块未完成详情展示方法&#10;首页数据分析">
+      <option name="closed" value="true" />
+      <created>1718790691327</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1718790691327</updated>
+    </task>
+    <task id="LOCAL-00034" summary="2024/6/17 20:51&#10;app模块:&#10;app发布模块完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;内容管理模块题库管理,经验分享两个模块未完成详情展示方法&#10;首页数据分析">
+      <option name="closed" value="true" />
+      <created>1718790765592</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1718790765592</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +597,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="第一次提交" />
     <MESSAGE value="TEST" />
     <MESSAGE value="2024/5/14 22:34 aop切面登陆参数校验完成" />
     <MESSAGE value="2024/5/15 12:39 映射数据库 role\role2menu\rolemenu3个表的entity和mapper和service及实现类的建立以及配置其mybatisplus" />
@@ -598,7 +621,8 @@
     <MESSAGE value="2024/6/13 22:16&#10;app模块:&#10;设备管理页面完成,用户管理页面查询/发布/禁用完成,&#10;//bug&#10;前端无法获取后端查询的数据(已解决&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
     <MESSAGE value="2024/6/14 21:20&#10;app模块:&#10;轮播图/问题反馈获取列表完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;轮播图管理\问题反馈\app发布模块未完成" />
     <MESSAGE value="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成" />
+    <MESSAGE value="2024/6/17 20:51&#10;app模块:&#10;app发布模块完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;内容管理模块题库管理,经验分享两个模块未完成详情展示方法&#10;首页数据分析" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/17 20:51&#10;app模块:&#10;app发布模块完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;内容管理模块题库管理,经验分享两个模块未完成详情展示方法&#10;首页数据分析" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,7 +669,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/QuestionInfoServiceImpl.java</url>
-          <line>155</line>
+          <line>164</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

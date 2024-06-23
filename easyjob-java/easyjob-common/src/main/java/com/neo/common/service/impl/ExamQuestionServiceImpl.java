@@ -13,6 +13,7 @@ import com.neo.common.entity.po.ExamQuestionItem;
 import com.neo.common.entity.query.ExamQuestionQuery;
 import com.neo.common.entity.vo.PaginationResultVO;
 import com.neo.common.exceptionhandler.EasyJobException;
+import com.neo.common.mapper.ACommonMapper;
 import com.neo.common.mapper.CategoryMapper;
 import com.neo.common.mapper.ExamQuestionItemMapper;
 import com.neo.common.mapper.ExamQuestionMapper;
@@ -52,6 +53,9 @@ public class ExamQuestionServiceImpl extends ServiceImpl<ExamQuestionMapper, Exa
 
     @Resource
     CategoryService categoryService;
+
+    @Resource
+    ACommonMapper aCommonMapper;
 
     @Override
     public PaginationResultVO<ExamQuestion> findListByPage(ExamQuestionQuery query) {
@@ -370,5 +374,32 @@ public class ExamQuestionServiceImpl extends ServiceImpl<ExamQuestionMapper, Exa
             this.examQuestionItemMapper.insertBatchSomeColumn(allExamQuestionItemList);
         }
         return errorList;
+    }
+
+
+    @Override
+    public ExamQuestion showDetailNext(ExamQuestionQuery query, Integer nextType, Integer currentId, boolean updateReadCount) {
+
+        QueryWrapper<ExamQuestion> queryWrapper = new QueryWrapper();
+        if (nextType == null) {
+            queryWrapper.eq("question_id", currentId);
+        } else if (nextType == -1) {
+            queryWrapper.lt("question_id", currentId);
+            queryWrapper.orderByDesc("question_id");
+        } else if (nextType == 1) {
+            queryWrapper.gt("question_id", currentId);
+            queryWrapper.orderByAsc("question_id");
+        }
+        queryWrapper.last("limit 0,1");
+        ExamQuestion examQuestion = examQuestionMapper.selectOne(queryWrapper);
+        if (examQuestion == null && nextType == null) {
+            throw new EasyJobException(ResultCode.NOT_FOUND, "内容不存在");
+        } else if (examQuestion == null && nextType == -1) {
+            throw new EasyJobException(ResultCode.ERROR_OTHER, "已经是第一条了");
+        } else if (examQuestion == null && nextType == 1) {
+            throw new EasyJobException(ResultCode.ERROR_OTHER, "已经是最后一条了");
+        }
+
+        return examQuestion;
     }
 }

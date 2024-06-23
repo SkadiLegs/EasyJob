@@ -3,11 +3,13 @@ package com.neo.common.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.neo.common.entity.constants.Constants;
 import com.neo.common.entity.enums.PageSize;
 import com.neo.common.entity.po.ShareInfo;
 import com.neo.common.entity.query.ShareInfoQuery;
 import com.neo.common.entity.vo.PaginationResultVO;
 import com.neo.common.exceptionhandler.EasyJobException;
+import com.neo.common.mapper.ACommonMapper;
 import com.neo.common.mapper.ShareInfoMapper;
 import com.neo.common.service.ShareInfoService;
 import com.neo.common.uilts.ResultCode;
@@ -31,6 +33,9 @@ public class ShareInfoServiceImpl extends ServiceImpl<ShareInfoMapper, ShareInfo
 
     @Resource
     ShareInfoMapper shareInfoMapper;
+
+    @Resource
+    ACommonMapper aCommonMapper;
 
     @Override
     public PaginationResultVO selectPage(ShareInfoQuery query) {
@@ -107,5 +112,40 @@ public class ShareInfoServiceImpl extends ServiceImpl<ShareInfoMapper, ShareInfo
             }
         }
         shareInfoMapper.deleteBatchIds(ShareIds_list);
+    }
+
+    @Override
+    public ShareInfo showDetailNext(ShareInfoQuery query, Integer nextType, Integer currentId, boolean updateReadCount) {
+//        if (nextType == null) {
+//            query.setShareId(currentId);
+//        } else {
+//            query.setNextType(nextType);
+//            query.setCurrentId(currentId);
+//        }
+        // 获取问题详情
+        QueryWrapper<ShareInfo> queryWrapper = new QueryWrapper();
+        if (nextType == null) {
+            queryWrapper.eq("share_id", currentId);
+        } else if (nextType == 1) {
+            queryWrapper.lt("share_id", currentId);
+            queryWrapper.orderByDesc("share_id");
+        } else if (nextType == -1) {
+            queryWrapper.gt("share_id", currentId);
+            queryWrapper.orderByAsc("share_id");
+        }
+        queryWrapper.last("limit 0,1");
+        ShareInfo shareInfo = shareInfoMapper.selectOne(queryWrapper);
+        if (shareInfo == null && nextType == null) {
+            throw new EasyJobException(ResultCode.NOT_FOUND, "内容不存在");
+        } else if (shareInfo == null && nextType == -1) {
+            throw new EasyJobException(ResultCode.ERROR_OTHER, "已经是第一条了");
+        } else if (shareInfo == null && nextType == 1) {
+            throw new EasyJobException(ResultCode.ERROR_OTHER, "已经是最后一条了");
+        }
+        if (updateReadCount && shareInfo != null) {
+            aCommonMapper.updateCount(Constants.TABLE_NAME_SHARE_INFO, 1, null, currentId);
+            shareInfo.setReadCount((shareInfo.getReadCount() == null ? 0 : shareInfo.getReadCount()) + 1);
+        }
+        return shareInfo;
     }
 }

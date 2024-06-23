@@ -72,4 +72,6 @@ public class AppUpdateController {
         appUpdateService.removeAppUpdataByid(id);
         return R.ok();
     }
+
+
 }

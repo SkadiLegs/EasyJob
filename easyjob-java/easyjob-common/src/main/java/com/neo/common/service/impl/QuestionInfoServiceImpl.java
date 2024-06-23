@@ -99,7 +99,7 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
      * @Author Lenove
      * @Date 2024/6/1
      * @MethodName showDetailNext
-     * @Param query:问题详情 ,nextType: 上一条问题的id , currentId: , updateReadCount:
+     * @Param query:问题详情 ,nextType=-1:已经是第一条,nextType=1:不是第一条 , currentId: , updateReadCount:
      * @Return: null
      */
     @Override
@@ -110,10 +110,19 @@ public class QuestionInfoServiceImpl extends ServiceImpl<QuestionInfoMapper, Que
             query.setNextType(nextType);
             query.setCurrentId(currentId);
         }
-
         // 获取问题详情
         QueryWrapper<QuestionInfo> queryWrapper = new QueryWrapper();
+        if (nextType == null) {
+            queryWrapper.eq("question_id", currentId);
+        } else if (nextType == 1) {
+            queryWrapper.lt("question_id", currentId);
+            queryWrapper.orderByDesc("question_id");
+        } else if (nextType == -1) {
+            queryWrapper.gt("question_id", currentId);
+            queryWrapper.orderByAsc("question_id");
+        }
         queryWrapper.last("limit 0,1");
+//        List<QuestionInfo> questionInfo = questionInfoMapper.selectList(queryWrapper);
         QuestionInfo questionInfo = questionInfoMapper.selectOne(queryWrapper);
         if (questionInfo == null && nextType == null) {
             throw new EasyJobException(ResultCode.NOT_FOUND, "内容不存在");

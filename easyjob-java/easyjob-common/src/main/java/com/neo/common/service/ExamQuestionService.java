@@ -29,4 +29,6 @@ public interface ExamQuestionService extends IService<ExamQuestion> {
     void removeExamQuestion(List<String> questionIds, Integer integer);
 
     List<ImportErrorItem> importExamQuestion(MultipartFile file, SessionUserAdminDto sessionUserAdminDto);
+
+    ExamQuestion showDetailNext(ExamQuestionQuery query, Integer nextType, Integer currentId, boolean updateReadCount);
 }

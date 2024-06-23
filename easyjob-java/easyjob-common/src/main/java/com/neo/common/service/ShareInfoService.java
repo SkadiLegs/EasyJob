@@ -21,4 +21,6 @@ public interface ShareInfoService extends IService<ShareInfo> {
     Integer saveShareInfo(ShareInfoQuery shareInfoQuery, Boolean superAdmin);
 
     void removeBatchShareInfo(String[] shareIds, Integer userId);
+
+    ShareInfo showDetailNext(ShareInfoQuery query, Integer nextType, Integer currentId, boolean updateReadCount);
 }

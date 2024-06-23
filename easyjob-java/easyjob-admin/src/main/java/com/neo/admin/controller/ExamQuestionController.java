@@ -137,5 +137,13 @@ public class ExamQuestionController {
         return R.ok().data(importErrorItems);
     }
 
+    @PostMapping("/showExamQuestionDetailNext")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.QUESTION_LIST)
+    public R showExamQuestionDetailNext(ExamQuestionQuery query, Integer nextType,
+                                        @VerifyParam(required = true) Integer currentId) {
+        ExamQuestion examQuestion = examQuestionService.showDetailNext(query, nextType, currentId, false);
+        return R.ok().data(examQuestion);
+    }
+
 
 }

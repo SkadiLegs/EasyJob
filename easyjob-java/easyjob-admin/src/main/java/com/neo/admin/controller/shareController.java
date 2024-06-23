@@ -6,6 +6,7 @@ import com.neo.common.entity.constants.Constants;
 import com.neo.common.entity.dto.SessionUserAdminDto;
 import com.neo.common.entity.enums.PermissionCodeEnum;
 import com.neo.common.entity.enums.PostStatusEnum;
+import com.neo.common.entity.po.ShareInfo;
 import com.neo.common.entity.query.ShareInfoQuery;
 import com.neo.common.entity.vo.PaginationResultVO;
 import com.neo.common.service.ShareInfoService;
@@ -100,6 +101,17 @@ public class shareController {
         String[] splitIds = shareIds.split(",");
         shareInfoService.removeBatchShareInfo(splitIds, sessionAttribute.getSuperAdmin() ? null : sessionAttribute.getUserId());
         return R.ok();
+    }
+
+    @PostMapping("/showShareDetailNext")
+    @GlobalInterceptor(permissionCode = PermissionCodeEnum.APP_UPDATE_LIST)
+    public R showShare(ShareInfoQuery query,
+                       Integer nextType,
+                       @VerifyParam(required = true) Integer currentId) {
+
+        ShareInfo shareInfo = shareInfoService.showDetailNext(query, nextType, currentId, false);
+
+        return R.ok().data(shareInfo);
     }
 
 
