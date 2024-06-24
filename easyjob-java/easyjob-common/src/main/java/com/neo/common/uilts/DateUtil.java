@@ -63,20 +63,29 @@ public class DateUtil {
         return localDate;
     }
 
+    //获取n天以前的日期
     public static Date getDayAgo(Integer day) {
+        // 获取当前的本地时间，并减去指定的天数(minusDays(day);)
         LocalDateTime localDateTime = LocalDateTime.now().minusDays(day);
+        // 获取系统默认的时区
         ZoneId zone = ZoneId.systemDefault();
+        // 将本地时间转换为该时区的即时时间
         Instant instant = localDateTime.atZone(zone).toInstant();
+        // 将即时时间转换为 Date 类型并返回
         return Date.from(instant);
     }
 
     public static List<String> getBetweenDate(Date startDate, Date endDate) {
+        // 将输入的日期类型转换为LocalDate类型
         LocalDate startLocalDate = fromLocateDate2String(startDate);
         LocalDate endLocalDate = fromLocateDate2String(endDate);
         long numOfDays = ChronoUnit.DAYS.between(startLocalDate, endLocalDate) + 1;
+        // 创建一个从起始日期开始，每次递增一天的流，并限制流的长度为天数差
         List<LocalDate> localDateList = Stream.iterate(startLocalDate, date -> date.plusDays(1)).limit(numOfDays).collect(Collectors.toList());
-
+        // 将LocalDate列表转换为日期字符串列表，格式为"yyyy_MM_dd"
         List<String> dateList = localDateList.stream().map(date -> date.format(DateTimeFormatter.ofPattern(DateTimePatternEnum.YYYY_MM_DD.getPattern()))).collect(Collectors.toList());
         return dateList;
     }
+
+
 }

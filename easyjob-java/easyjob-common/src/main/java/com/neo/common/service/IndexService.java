@@ -1,5 +1,10 @@
 package com.neo.common.service;
 
+import com.neo.common.entity.dto.StatisticsDataDto;
+import com.neo.common.entity.dto.StatisticsDataWeekDto;
+
+import java.util.List;
+
 /**
  * @Description TODO
  * @Author Lenove
@@ -9,4 +14,10 @@ package com.neo.common.service;
  * @Params
  */
 public interface IndexService {
+    List<StatisticsDataDto> getAllData();
+
+    StatisticsDataWeekDto getAppWeekData();
+
+    StatisticsDataWeekDto getContentWeekData();
+
 }
