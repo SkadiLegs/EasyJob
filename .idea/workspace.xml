@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/23 22:13&#10;app模块:&#10;内容管理模块的八股文分享,题库管理,经验分享点击展示详细信息功能完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;首页数据分析">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/24 20:48&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/dto/StatisticsDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/dto/StatisticsDataDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/IndexService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/IndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/IndexServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/uilts/DateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/annotation/GlobalInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/annotation/GlobalInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/aspect/OperationAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/aspect/OperationAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,49 +87,49 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.easyjob-admin [clean].executor": "Run",
-    "Maven.easyjob-admin [install].executor": "Run",
-    "Maven.easyjob-java [clean].executor": "Run",
-    "Maven.easyjob-java [install].executor": "Run",
-    "Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor": "Run",
-    "Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "Maven.easyjob-java [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.EasyjobAdminApplication (1).executor": "JRebel Executor",
-    "Spring Boot.EasyjobAdminApplication.executor": "Run",
-    "Spring Boot.EasyjobApiApplication.executor": "Run",
-    "extract.method.default.visibility": "private",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true",
-    "应用程序.DateUtil.executor": "JRebel Executor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.easyjob-admin [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-admin [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-java [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-java [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-java [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.easyjob-java [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EasyjobAdminApplication (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.EasyjobAdminApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EasyjobApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/workSpaceIdea/easyjob/easyjob-java/easyjob-common/src/main/java/com/neo/common/entity/query&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;应用程序.DateUtil.executor&quot;: &quot;JRebel Executor&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
-      "MariaDB"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言&quot;: [
+      &quot;MariaDB&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -290,7 +289,15 @@
       <workItem from="1718608080454" duration="11667000" />
       <workItem from="1718778714417" duration="8525000" />
       <workItem from="1719129198868" duration="8803000" />
-      <workItem from="1719215265919" duration="8730000" />
+      <workItem from="1719215265919" duration="8899000" />
+      <workItem from="1719316247759" duration="1770000" />
+      <workItem from="1719478886048" duration="4385000" />
+      <workItem from="1719500609015" duration="1240000" />
+      <workItem from="1719662472886" duration="70000" />
+      <workItem from="1719736667504" duration="707000" />
+      <workItem from="1719755158195" duration="689000" />
+      <workItem from="1719822716368" duration="2914000" />
+      <workItem from="1720186341892" duration="3312000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -572,7 +579,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719152136041</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="2024/6/23 22:13&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug">
+      <option name="closed" value="true" />
+      <created>1719233296815</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1719233296815</updated>
+    </task>
+    <task id="LOCAL-00037" summary="2024/6/24 20:48&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug">
+      <option name="closed" value="true" />
+      <created>1719233366907</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1719233366907</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,8 +639,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="2024/5/14 22:34 aop切面登陆参数校验完成" />
-    <MESSAGE value="2024/5/15 12:39 映射数据库 role\role2menu\rolemenu3个表的entity和mapper和service及实现类的建立以及配置其mybatisplus" />
     <MESSAGE value="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl" />
     <MESSAGE value="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl,mybatisPlus分页配置" />
     <MESSAGE value="2024/5/18 21:39&#10;Login前端对接暂时完成&#10;//TODO权限认证" />
@@ -641,7 +662,9 @@
     <MESSAGE value="2024/6/17 20:51&#10;app模块:&#10;问题反馈模块完成,优化了反馈问题时过往问答记录的显示和查询&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;app发布模块未完成" />
     <MESSAGE value="2024/6/17 20:51&#10;app模块:&#10;app发布模块完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;内容管理模块题库管理,经验分享两个模块未完成详情展示方法&#10;首页数据分析" />
     <MESSAGE value="2024/6/23 22:13&#10;app模块:&#10;内容管理模块的八股文分享,题库管理,经验分享点击展示详细信息功能完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;首页数据分析" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/23 22:13&#10;app模块:&#10;内容管理模块的八股文分享,题库管理,经验分享点击展示详细信息功能完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;首页数据分析" />
+    <MESSAGE value="2024/6/23 22:13&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug" />
+    <MESSAGE value="2024/6/24 20:48&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/6/24 20:48&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -698,7 +721,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java</url>
-          <line>152</line>
+          <line>153</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -725,6 +748,11 @@
           <url>file://$PROJECT_DIR$/easyjob-java/easyjob-common/src/main/java/com/neo/common/service/impl/AppUpdateServiceImpl.java</url>
           <line>93</line>
           <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

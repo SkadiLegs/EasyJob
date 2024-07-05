@@ -9,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)//作用在方法上
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME)//需要什么级别保存该注释信息
 public @interface GlobalInterceptor {
 
     boolean checkParams() default true;

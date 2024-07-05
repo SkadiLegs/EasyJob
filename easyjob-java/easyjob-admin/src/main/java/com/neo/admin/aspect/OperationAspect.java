@@ -54,7 +54,7 @@ public class OperationAspect {
         // 通过反射拿到方法
         Method method = ((MethodSignature) point.getSignature()).getMethod();
         logger.info("方法名", method.getName());
-        System.out.println("=====" + method.getName());
+        System.out.println("方法名" + method.getName());
         //通过反射获取 @GlobalInterceptor 注解
         GlobalInterceptor globalInterceptor = method.getAnnotation(GlobalInterceptor.class);
         if (globalInterceptor == null) {
@@ -159,9 +159,9 @@ public class OperationAspect {
      */
     private void checkValue(Object value, VerifyParam verifyParam) {
         //是否为空
-        Boolean isEmpty = value == null || StringUtils.isEmpty(value.toString());
+        boolean isEmpty = value == null || StringUtils.isEmpty(value.toString());
         //取得长度
-        Integer length = value == null ? 0 : value.toString().length();
+        int length = value == null ? 0 : value.toString().length();
         /**
          * 校验是否为空
          */

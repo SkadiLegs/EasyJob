@@ -124,6 +124,7 @@ public class FileController {
         FileInputStream fileInputStream = null;
         try {
             File file = new File(filePath);
+            fileInputStream = new FileInputStream(file);
             byte[] byteData = new byte[1024];
             outputStream = response.getOutputStream();
             int len = 0;
