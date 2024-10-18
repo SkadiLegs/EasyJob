@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/6/24 20:48&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug">
+    <list default="true" id="13a7b538-d99f-4d85-86fc-f7a65d14d70c" name="更改" comment="2024/7/05 22:44&#10;bug修复:无法显示图片问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/annotation/GlobalInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/annotation/GlobalInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/aspect/OperationAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/aspect/OperationAspect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/java/com/neo/admin/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-admin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/easyjob-java/easyjob-api/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +296,8 @@
       <workItem from="1719736667504" duration="707000" />
       <workItem from="1719755158195" duration="689000" />
       <workItem from="1719822716368" duration="2914000" />
-      <workItem from="1720186341892" duration="3312000" />
+      <workItem from="1720186341892" duration="3776000" />
+      <workItem from="1729241111645" duration="356000" />
     </task>
     <task id="LOCAL-00001" summary="create github">
       <option name="closed" value="true" />
@@ -595,7 +595,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719233366907</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="2024/7/05 22:44&#10;bug修复:无法显示图片问题">
+      <option name="closed" value="true" />
+      <created>1720190703246</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1720190703246</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +647,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl" />
     <MESSAGE value="2024/5/15 22:56&#10;TODO菜单查询递归SysMenuServiceImpl,mybatisPlus分页配置" />
     <MESSAGE value="2024/5/18 21:39&#10;Login前端对接暂时完成&#10;//TODO权限认证" />
     <MESSAGE value="2024/5/22 16:43&#10;菜单列表\保存完成&#10;//TODO&#10;角色列表&amp;权限列表crud" />
@@ -664,7 +671,8 @@
     <MESSAGE value="2024/6/23 22:13&#10;app模块:&#10;内容管理模块的八股文分享,题库管理,经验分享点击展示详细信息功能完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;首页数据分析" />
     <MESSAGE value="2024/6/23 22:13&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug" />
     <MESSAGE value="2024/6/24 20:48&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/6/24 20:48&#10;app模块:&#10;首页数据统计完成,整体后台项目基本完成&#10;//bug&#10;无法读取服务器文件&#10;//todo&#10;文件读取bug" />
+    <MESSAGE value="2024/7/05 22:44&#10;bug修复:无法显示图片问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/7/05 22:44&#10;bug修复:无法显示图片问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
